@@ -70,8 +70,9 @@
 	
 	<!-- Put some contents here -->
 	<h1>Products!</h1>
-	
-	
+	a<br/>
+	<c:out value="${productList}" />
+	<br/>b
  
 	<form name='f' action="capability.htm"  method='POST'>
  		<input name="submit" type="submit"	value="Next >>" />

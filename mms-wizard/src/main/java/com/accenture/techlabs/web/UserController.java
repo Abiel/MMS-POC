@@ -12,7 +12,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.accenture.techlabs.constants.Constants;
 import com.accenture.techlabs.entities.User;
+import com.accenture.techlabs.httpclient.SparqlClient;
 import com.accenture.techlabs.services.UserService;
 
 @Controller
@@ -26,42 +28,6 @@ public class UserController {
 	{
 		System.out.println("... controller for weelcome.");
 		return "welcome";
-	}
-	
-	@RequestMapping(value="/product", method = RequestMethod.GET)
-	public String login(ModelMap model) {
-		System.out.println("... controller for product caalled");
-		return "product";
-	}
-	
-	@RequestMapping(value="/product", method = RequestMethod.POST)
-	public String product_post(ModelMap model) {
-		System.out.println("... controller for product caalled");
-		return "product";
-	}
-	
-	@RequestMapping(value="/capability", method = RequestMethod.POST)
-	public String component_post(ModelMap model) {
-		System.out.println("... controller for capability caalled");
-		return "capability";
-	}
-	
-	@RequestMapping(value="/service", method = RequestMethod.POST)
-	public String service_post(ModelMap model) {
-		System.out.println("... controller for service caalled");
-		return "service";
-	}
-	
-	@RequestMapping(value="/serviceprovider", method = RequestMethod.POST)
-	public String provider_post(ModelMap model) {
-		System.out.println("... controller for provider caalled");
-		return "serviceprovider";
-	}
-	
-	@RequestMapping(value="/businessapi", method = RequestMethod.POST)
-	public String businessapi_post(ModelMap model) {
-		System.out.println("... controller for provider caalled");
-		return "businessapi";
 	}
 
 	@RequestMapping("/userhome")

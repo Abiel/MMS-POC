@@ -64,18 +64,28 @@
 			${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
 		</div>
 	</c:if>
-	
-	
-	
-	
-	<!-- Put some contents here -->
-	<h1>Capability!</h1>
-	
-	
- 
-	<form name='f' action="<c:url value='service.htm' />"  method='POST'>
- 		<input name="submit" type="submit"	value="Next >>" />
-	</form>
+
+
+
+
+		<!-- Put some contents here -->
+		<h1>Capability!</h1>
+
+		<form name='f' action="<c:url value='service.htm' />" method='POST'>
+			<table border="1">
+				<c:forEach var="ob" varStatus="status" items="${capabilityList}">
+					<tr>
+						<td><input type="checkbox" name="capability" value="${ob.name}"> <c:out value="${ob.name}" /></td>
+					</tr>
+				</c:forEach>
+			</table>
+			<input name="submit" type="submit" value="Next >>" />
+		</form>
+
+
+
+
+
 	</div>
 	
     <!-- Bootstrap core JavaScript
