@@ -24,14 +24,12 @@ public class ServiceController {
 	
 	@RequestMapping(value="/service", method = RequestMethod.POST)
 	public String service_post(ModelMap model) {
-		System.out.println("... controller for POST service caalled");
 		return "service";
 	}
 	
 	
 	@RequestMapping(value="/service", method = RequestMethod.GET)
 	public String service_get(ModelMap model) {
-		System.out.println("... controller for GET service caalled");
 		return "service";
 	}
 

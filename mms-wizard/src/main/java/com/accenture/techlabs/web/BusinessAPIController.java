@@ -24,13 +24,11 @@ public class BusinessAPIController {
 	
 	@RequestMapping(value="/businessapi", method = RequestMethod.POST)
 	public String businessapi_post(ModelMap model) {
-		System.out.println("... controller for provider caalled");
 		return "businessapi";
 	}
 	
 	@RequestMapping(value="/businessapi", method = RequestMethod.GET)
 	public String businessapi_get(ModelMap model) {
-		System.out.println("... controller for provider caalled");
 		return "businessapi";
 	}
 

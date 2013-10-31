@@ -34,12 +34,9 @@ public class ProductController {
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product_get(ModelMap model) {
 		try {
-			System.out.println("... controller for GET product caalled");
 			String products = SparqlClient.getProducts();
-			System.out.println("Controller got products...");
 			List<Product> productList;
 			productList = toProductList(products);
-			System.out.println(".... this is plist:" + productList);
 			model.addAttribute("productList", productList);
 			
 		} catch (JSONException e) {
@@ -51,13 +48,9 @@ public class ProductController {
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
 	public String product_post(ModelMap model) {
 		try {
-			System.out.println("... controller for POST product caalled");
 			String products = SparqlClient.getProducts();
 			List<Product> productList;
-			System.out.println("...calling to product list...");
 			productList = toProductList(products);
-			System.out.println(".... this is plist:" + productList);
-			System.out.println("Controller got products...");
 			model.addAttribute("productList", productList);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -69,7 +62,6 @@ public class ProductController {
 	
 	
 	private List<Product> toProductList(String productList) throws JSONException {
-		System.out.println("Processing productList: " + productList);
 		List<Product> allProducts = new ArrayList<Product>();
 		JSONObject allData = new JSONObject(productList);
 		JSONObject result = allData.getJSONObject("results");
@@ -79,12 +71,9 @@ public class ProductController {
 			JSONObject product = current.getJSONObject("product");
 			Product productDomainObj = new Product();
 			productDomainObj.setName(product.getString("value"));
-			System.out.println("Set: " + productDomainObj.getName());
 			if(!allProducts.contains(productDomainObj))
 				allProducts.add(productDomainObj);
 		}
-		System.out.println("Size: " + allProducts.size());
-		System.out.println(allProducts);
 		return allProducts;
 	}
 	

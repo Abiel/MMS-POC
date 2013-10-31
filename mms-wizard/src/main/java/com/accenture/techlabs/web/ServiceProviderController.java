@@ -24,13 +24,11 @@ public class ServiceProviderController {
 	
 	@RequestMapping(value="/serviceprovider", method = RequestMethod.POST)
 	public String provider_post(ModelMap model) {
-		System.out.println("... controller for POST provider caalled");
 		return "serviceprovider";
 	}
 	
 	@RequestMapping(value="/serviceprovider", method = RequestMethod.GET)
 	public String provider_get(ModelMap model) {
-		System.out.println("... controller for GET provider caalled");
 		return "serviceprovider";
 	}
 

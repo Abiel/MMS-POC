@@ -33,10 +33,8 @@ public class CapabilityController {
 	@RequestMapping(value = "/capability", method = RequestMethod.POST)
 	public String component_post(ModelMap model) {
 		try {
-			System.out.println("... controller for POST capability caalled");
 			String capComApiResponse = SparqlClient.getCapabilityComponentAPI();
 			List<Capability> allCapability = toCapabilityList(capComApiResponse);
-			System.out.println("Controller got products...");
 			model.addAttribute("capabilityList", allCapability);
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -46,7 +44,6 @@ public class CapabilityController {
 
 	@RequestMapping(value = "/capability", method = RequestMethod.GET)
 	public String component_get(ModelMap model) {
-		System.out.println("... controller for GET capability caalled");
 		return "capability";
 	}
 
@@ -61,7 +58,6 @@ public class CapabilityController {
 			JSONObject cap = current.getJSONObject("cap");
 			Capability capabilityDomainObj = new Capability();
 			capabilityDomainObj.setName(cap.getString("value"));
-			System.out.println("Set: " + capabilityDomainObj.getName());
 			if(!allCapabilities.contains(capabilityDomainObj))
 				allCapabilities.add(capabilityDomainObj);
 		}

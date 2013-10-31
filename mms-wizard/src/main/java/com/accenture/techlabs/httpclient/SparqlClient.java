@@ -98,7 +98,6 @@ public class SparqlClient {
 	public static void main(String[] args) {
 		//testing
 		System.out.println( SparqlClient.getMandatoryCapabilities());
-
 	}
 
 }

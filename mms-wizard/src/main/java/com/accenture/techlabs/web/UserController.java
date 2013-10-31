@@ -26,14 +26,12 @@ public class UserController {
 	@RequestMapping("/welcome")
 	public String welcome(Model model) 
 	{
-		System.out.println("... controller for weelcome.");
 		return "welcome";
 	}
 
 	@RequestMapping("/userhome")
 	public String userhome(Model model) 
 	{
-		System.out.println("... controller for /userhome");
 		List<User> blogs = userService.findAllUsers();
 		model.addAttribute("USERS", blogs);
 		return "userhome";
@@ -42,7 +40,6 @@ public class UserController {
 	@RequestMapping("/admin/adminhome")
 	public String adminhome(Model model) 
 	{
-		System.out.println("... controller of /admin/adminhome");
 		List<User> blogs = userService.findAllUsers();
 		model.addAttribute("USERS", blogs);
 		return "admin/adminhome";
