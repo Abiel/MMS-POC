@@ -70,11 +70,16 @@
 	
 	<!-- Put some contents here -->
 	<h1>Products!</h1>
-	a<br/>
-	<c:out value="${productList}" />
-	<br/>b
  
 	<form name='f' action="capability.htm"  method='POST'>
+		<table border="1">
+				<c:forEach var="i" varStatus="status" items="${productList}">
+					<tr>
+						<td><input type="checkbox" name="product" value="${i.name}"> <c:out value="${i.name}" /></td>
+					</tr>
+				</c:forEach>
+			</table>
+			
  		<input name="submit" type="submit"	value="Next >>" />
 	</form>
 	</div>
