@@ -33,95 +33,73 @@
 	</script>
 	
 </head>
-<body>
-<div class="navbar-wrapper">
-      <div class="container">
+<body style="background-image: linear-gradient(to bottom, #011111, #1f0a03);">
 
-        <div class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">MMS-Wizard</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-                <li>
-                	<a href="userhome.htm">User Login</a>
-                </li>
-                <li>
-                	<a href="admin/adminhome.htm">Admin Login</a>
-                </li>
-              </ul>
+    <div class="container">
+  		<div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h3 align="right" id="forms">Accenture Mobile Operated Services</h3>
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-    
-    <div style="float: right; padding-right:15%">
-	<h3>Signin</h3>
- 
-	<c:if test="${not empty error}">
-		<div class="errorblock">
-			Your login attempt was not successful, try again.<br /> Caused :
-			${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-		</div>
-	</c:if>
- 
-	<form name='f' action="<c:url value='j_spring_security_check' />"
-		method='POST'>
- 
-		<table>
-			<tr>
-				<td>User:</td>
-				<td><input type='text' name='j_username' value=''>
-				</td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='j_password' />
-				</td>
-			</tr>
-			<tr>
-				<td colspan='2'><input name="submit" type="submit"
-					value="submit" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan='2'><input name="reset" type="reset" />
-				</td>
-			</tr>
-		</table>
- 
-	</form>
-	</div>
-	
-    <!-- Bootstrap core JavaScript
+			<div class="row">
+				<div class="col-sm-5">
+					<div>
+						<form class="bs-example form-horizontal" name='f'
+							action="<c:url value='j_spring_security_check' />" method='POST'>
+							<fieldset>
+								<legend>Login</legend>
+								<div class="form-group">
+									<label class="col-lg-2 control-label" for="inputEmail">Username</label>
+									<div class="col-lg-8">
+										<input type="text" placeholder="Username" id="inputEmail"
+											name='j_username' class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-2 control-label" for="inputPassword">Password</label>
+									<div class="col-lg-8">
+										<input type="password" placeholder="Password"
+											id="inputPassword" name='j_password' class="form-control">
+										<c:if test="${not empty error}">
+											<span class="help-block">Invalid Username or Password.</span>
+											<%-- ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message} --%>
+										</c:if>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-lg-10 col-lg-offset-2">
+										<button class="btn btn-default">Cancel</button>
+										<button class="btn btn-primary" type="submit">Submit</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-4 col-lg-offset-1">
+
+					<img src='<spring:url value="/resources/images/mobile.png"/>'
+						class="img-polaroid">
+
+				</div>
+			</div>
+			<br><br><br><br>
+			
+			<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src='<spring:url value="/resources/js/jquery.min.js" />'></script>
     <script src='<spring:url value="/resources/css/bootstrap3/js/bootstrap.min.js" />'></script>
     <script src='<spring:url value="/resources/js/holder.js"/>'></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    --
   </body>
   
 </html>

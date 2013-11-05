@@ -24,13 +24,13 @@
 	<http pattern="/login*" security="none"></http>
 	
 	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/welcome*" access="permitAll" />
-		<intercept-url pattern="/product*" access="permitAll" />
-		<intercept-url pattern="/capability*" access="permitAll" />
-		<intercept-url pattern="/provider*" access="permitAll" />
-		<intercept-url pattern="/service*" access="permitAll" />
-		<intercept-url pattern="/serviceprovider*" access="permitAll" />
-		<intercept-url pattern="/businessapi*" access="permitAll" />
+		<intercept-url pattern="/welcome*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/product*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/capability*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/provider*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/service*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/serviceprovider*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/businessapi*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
 		
@@ -39,12 +39,21 @@
 	</http>
  
 	<authentication-manager>
-	  <authentication-provider>
+	<!-- File Based Authentication. For quick testing without DB Abiel -->
+	  <!-- <authentication-provider>
 		<user-service>
 			<user name="admin" password="admin123" authorities="ROLE_USER, ROLE_ADMIN" />
 			<user name="test" password="test123" authorities="ROLE_USER" />
 		</user-service>
-	  </authentication-provider>
+	  </authentication-provider> -->
+	  
+	  
+	  <!-- DB Based Authentication. For production line configuration Abiel  -->
+	  <authentication-provider>
+		<jdbc-user-service data-source-ref="dataSource" users-by-username-query="select username,password, enabled from users where username=?" 
+ 		   authorities-by-username-query="select u.username, ur.authority from users u, user_roles ur where u.user_id = ur.user_id and u.username =?  " 
+		/>
+	   </authentication-provider>
 	</authentication-manager>
   	
 </beans:beans>

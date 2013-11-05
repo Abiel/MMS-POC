@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.accenture.techlabs.constants.Constants;
 import com.accenture.techlabs.entities.User;
@@ -22,6 +23,14 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@RequestMapping(value="/login", method = RequestMethod.GET)
+	public String login(ModelMap model, @RequestParam(value="failed", required=false) boolean loginFailed) {
+		System.out.println("... controller for login caalled");
+		if(loginFailed)
+			model.addAttribute("error", "Login Failed");
+		return "login";
+	}
 	
 	@RequestMapping("/welcome")
 	public String welcome(Model model) 
