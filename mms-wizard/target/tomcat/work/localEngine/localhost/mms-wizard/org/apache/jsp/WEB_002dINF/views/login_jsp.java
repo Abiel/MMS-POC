@@ -126,7 +126,13 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"row\">\r\n");
       out.write("          <div class=\"col-lg-12\">\r\n");
       out.write("            <div class=\"page-header\">\r\n");
-      out.write("              <h3 align=\"right\" id=\"forms\">Accenture Mobile Operated Services</h3>\r\n");
+      out.write("            <div class=\"row\">\r\n");
+      out.write("            \t<div class=\"col-lg-5\"><img width=\"25%\" src='");
+      if (_jspx_meth_spring_005furl_005f4(_jspx_page_context))
+        return;
+      out.write("' class=\"img-polaroid\"></div>\r\n");
+      out.write("            \t<div class=\"col-lg-5\"><h3 align=\"right\" id=\"forms\">Accenture Mobile Operated Services</h3></div>\r\n");
+      out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("        </div>\r\n");
@@ -140,7 +146,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\" method='POST'>\r\n");
       out.write("\t\t\t\t\t\t\t<fieldset>\r\n");
-      out.write("\t\t\t\t\t\t\t\t<legend>Login</legend>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<legend style=\"border-width: 0 0 0\">Login</legend>\r\n");
       out.write("\t\t\t\t\t\t\t\t<div class=\"form-group\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<label class=\"col-lg-2 control-label\" for=\"inputEmail\">Username</label>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"col-lg-8\">\r\n");
@@ -172,7 +178,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t<div class=\"col-lg-4 col-lg-offset-1\">\r\n");
       out.write("\r\n");
       out.write("\t\t\t\t\t<img src='");
-      if (_jspx_meth_spring_005furl_005f4(_jspx_page_context))
+      if (_jspx_meth_spring_005furl_005f5(_jspx_page_context))
         return;
       out.write("'\r\n");
       out.write("\t\t\t\t\t\tclass=\"img-polaroid\">\r\n");
@@ -185,15 +191,15 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    ================================================== -->\r\n");
       out.write("    <!-- Placed at the end of the document so the pages load faster -->\r\n");
       out.write("    <script src='");
-      if (_jspx_meth_spring_005furl_005f5(_jspx_page_context))
-        return;
-      out.write("'></script>\r\n");
-      out.write("    <script src='");
       if (_jspx_meth_spring_005furl_005f6(_jspx_page_context))
         return;
       out.write("'></script>\r\n");
       out.write("    <script src='");
       if (_jspx_meth_spring_005furl_005f7(_jspx_page_context))
+        return;
+      out.write("'></script>\r\n");
+      out.write("    <script src='");
+      if (_jspx_meth_spring_005furl_005f8(_jspx_page_context))
         return;
       out.write("'></script>\r\n");
       out.write("    <br>\r\n");
@@ -324,6 +330,33 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_spring_005furl_005f4(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  spring:url
+    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f4 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
+    _jspx_th_spring_005furl_005f4.setPageContext(_jspx_page_context);
+    _jspx_th_spring_005furl_005f4.setParent(null);
+    // /WEB-INF/views/login.jsp(44,57) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_spring_005furl_005f4.setValue("/resources/images/logo.png");
+    int[] _jspx_push_body_count_spring_005furl_005f4 = new int[] { 0 };
+    try {
+      int _jspx_eval_spring_005furl_005f4 = _jspx_th_spring_005furl_005f4.doStartTag();
+      if (_jspx_th_spring_005furl_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_spring_005furl_005f4[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_spring_005furl_005f4.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_spring_005furl_005f4.doFinally();
+      _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_spring_005furl_005f4);
+    }
+    return false;
+  }
+
   private boolean _jspx_meth_c_005furl_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -332,7 +365,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f0.setParent(null);
-    // /WEB-INF/views/login.jsp(52,15) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(55,15) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f0.setValue("j_spring_security_check");
     int _jspx_eval_c_005furl_005f0 = _jspx_th_c_005furl_005f0.doStartTag();
     if (_jspx_th_c_005furl_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -351,7 +384,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f0.setParent(null);
-    // /WEB-INF/views/login.jsp(67,10) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(70,10) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${not empty error}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
     if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -374,33 +407,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_spring_005furl_005f4(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f4 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_005furl_005f4.setPageContext(_jspx_page_context);
-    _jspx_th_spring_005furl_005f4.setParent(null);
-    // /WEB-INF/views/login.jsp(85,15) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_spring_005furl_005f4.setValue("/resources/images/mobile.png");
-    int[] _jspx_push_body_count_spring_005furl_005f4 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_005furl_005f4 = _jspx_th_spring_005furl_005f4.doStartTag();
-      if (_jspx_th_spring_005furl_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_005furl_005f4[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_005furl_005f4.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_005furl_005f4.doFinally();
-      _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_spring_005furl_005f4);
-    }
-    return false;
-  }
-
   private boolean _jspx_meth_spring_005furl_005f5(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -409,8 +415,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f5 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f5.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f5.setParent(null);
-    // /WEB-INF/views/login.jsp(95,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_spring_005furl_005f5.setValue("/resources/js/jquery.min.js");
+    // /WEB-INF/views/login.jsp(88,15) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_spring_005furl_005f5.setValue("/resources/images/mobile.png");
     int[] _jspx_push_body_count_spring_005furl_005f5 = new int[] { 0 };
     try {
       int _jspx_eval_spring_005furl_005f5 = _jspx_th_spring_005furl_005f5.doStartTag();
@@ -436,8 +442,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f6 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f6.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f6.setParent(null);
-    // /WEB-INF/views/login.jsp(96,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_spring_005furl_005f6.setValue("/resources/css/bootstrap3/js/bootstrap.min.js");
+    // /WEB-INF/views/login.jsp(98,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_spring_005furl_005f6.setValue("/resources/js/jquery.min.js");
     int[] _jspx_push_body_count_spring_005furl_005f6 = new int[] { 0 };
     try {
       int _jspx_eval_spring_005furl_005f6 = _jspx_th_spring_005furl_005f6.doStartTag();
@@ -463,8 +469,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f7 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f7.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f7.setParent(null);
-    // /WEB-INF/views/login.jsp(97,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_spring_005furl_005f7.setValue("/resources/js/holder.js");
+    // /WEB-INF/views/login.jsp(99,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_spring_005furl_005f7.setValue("/resources/css/bootstrap3/js/bootstrap.min.js");
     int[] _jspx_push_body_count_spring_005furl_005f7 = new int[] { 0 };
     try {
       int _jspx_eval_spring_005furl_005f7 = _jspx_th_spring_005furl_005f7.doStartTag();
@@ -478,6 +484,33 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspx_th_spring_005furl_005f7.doFinally();
       _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_spring_005furl_005f7);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_spring_005furl_005f8(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  spring:url
+    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f8 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
+    _jspx_th_spring_005furl_005f8.setPageContext(_jspx_page_context);
+    _jspx_th_spring_005furl_005f8.setParent(null);
+    // /WEB-INF/views/login.jsp(100,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_spring_005furl_005f8.setValue("/resources/js/holder.js");
+    int[] _jspx_push_body_count_spring_005furl_005f8 = new int[] { 0 };
+    try {
+      int _jspx_eval_spring_005furl_005f8 = _jspx_th_spring_005furl_005f8.doStartTag();
+      if (_jspx_th_spring_005furl_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_spring_005furl_005f8[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_spring_005furl_005f8.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_spring_005furl_005f8.doFinally();
+      _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_spring_005furl_005f8);
     }
     return false;
   }

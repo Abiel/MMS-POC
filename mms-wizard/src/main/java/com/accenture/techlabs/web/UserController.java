@@ -26,7 +26,6 @@ public class UserController {
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model, @RequestParam(value="failed", required=false) boolean loginFailed) {
-		System.out.println("... controller for login caalled");
 		if(loginFailed)
 			model.addAttribute("error", "Login Failed");
 		return "login";

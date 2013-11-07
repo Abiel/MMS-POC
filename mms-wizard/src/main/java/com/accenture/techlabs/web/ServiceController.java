@@ -8,6 +8,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.accenture.techlabs.domain.Capability;
+import com.accenture.techlabs.domain.Product;
+
 /**
  * @author abiel.m.woldu
  *
@@ -23,7 +26,8 @@ public class ServiceController {
 	}
 	
 	@RequestMapping(value="/service", method = RequestMethod.POST)
-	public String service_post(ModelMap model) {
+	public String service_post(Product product, ModelMap model) {
+		System.out.println("Capabilities selcted: " + product.getCapability().length);
 		return "service";
 	}
 	

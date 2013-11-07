@@ -3,13 +3,15 @@
  */
 package com.accenture.techlabs.domain;
 
+import java.util.Arrays;
+
 /**
  * @author abiel.m.woldu
  *
  */
 public class Product {
-	private long id;
 	private String name;
+	private String[] capability;
 
 	/**
 	 * 
@@ -18,23 +20,9 @@ public class Product {
 	}
 	
 	
-
-	public long getId() {
-		return id;
-	}
-
-
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
-
 	public String getName() {
 		return name;
 	}
-
 
 
 	public void setName(String name) {
@@ -42,6 +30,20 @@ public class Product {
 	}
 
 
+	public String[] getCapability() {
+		return capability;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(capability);
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -52,7 +54,7 @@ public class Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Product other = (Product) obj;
-		if (id != other.id)
+		if (!Arrays.equals(capability, other.capability))
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -61,6 +63,18 @@ public class Product {
 			return false;
 		return true;
 	}
+
+
+
+
+
+
+	public void setCapability(String[] capability) {
+		this.capability = capability;
+	}
+
+
+
 
 
 

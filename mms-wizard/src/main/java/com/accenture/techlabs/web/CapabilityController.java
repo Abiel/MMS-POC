@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.accenture.techlabs.domain.Capability;
+import com.accenture.techlabs.domain.Product;
 import com.accenture.techlabs.httpclient.SparqlClient;
 
 /**
@@ -31,8 +32,9 @@ public class CapabilityController {
 	}
 
 	@RequestMapping(value = "/capability", method = RequestMethod.POST)
-	public String component_post(ModelMap model) {
+	public String component_post(Product product, ModelMap model) {
 		try {
+			System.out.println("Product Selected: " + product.getName());
 			String capComApiResponse = SparqlClient.getCapabilityComponentAPI();
 			List<Capability> allCapability = toCapabilityList(capComApiResponse);
 			model.addAttribute("capabilityList", allCapability);

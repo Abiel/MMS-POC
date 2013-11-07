@@ -40,7 +40,10 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
-              <h3 align="right" id="forms">Accenture Mobile Operated Services</h3>
+            <div class="row">
+            	<div class="col-lg-5"><img width="25%" src='<spring:url value="/resources/images/logo.png"/>' class="img-polaroid"></div>
+            	<div class="col-lg-5"><h3 align="right" id="forms">Accenture Mobile Operated Services</h3></div>
+                </div>
             </div>
           </div>
         </div>
@@ -51,7 +54,7 @@
 						<form class="bs-example form-horizontal" name='f'
 							action="<c:url value='j_spring_security_check' />" method='POST'>
 							<fieldset>
-								<legend>Login</legend>
+								<legend style="border-width: 0 0 0">Login</legend>
 								<div class="form-group">
 									<label class="col-lg-2 control-label" for="inputEmail">Username</label>
 									<div class="col-lg-8">
