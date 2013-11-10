@@ -3,7 +3,6 @@
  */
 package com.accenture.techlabs.domain;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,27 +10,19 @@ import java.util.List;
  *
  */
 public class Capability {
-	
-	private long id;
+	private String uri;
 	private String name;
-	private String[] serviceList;
+	private List<Service> serviceList;
 
 	/**
 	 * 
 	 */
 	public Capability() {
-	}
-	
-	
+	}	
 
-	public long getId() {
-		return id;
-	}
-
-
-
-	public void setId(long id) {
-		this.id = id;
+	public Capability(String uri) {
+		super();
+		this.uri = uri;
 	}
 
 
@@ -40,25 +31,38 @@ public class Capability {
 		return name;
 	}
 
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	public String getUri() {
+		return uri;
+	}
 
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+
+	public List<Service> getServiceList() {
+		return serviceList;
+	}
+
+	public void setServiceList(List<Service> serviceList) {
+		this.serviceList = serviceList;
+	}
+	
+	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + Arrays.hashCode(serviceList);
+		result = prime * result
+				+ ((serviceList == null) ? 0 : serviceList.hashCode());
+		result = prime * result + ((uri == null) ? 0 : uri.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -69,19 +73,13 @@ public class Capability {
 		if (getClass() != obj.getClass())
 			return false;
 		Capability other = (Capability) obj;
-		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (uri == null) {
+			if (other.uri != null)
 				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (!Arrays.equals(serviceList, other.serviceList))
+		} else if (!uri.equals(other.uri))
 			return false;
 		return true;
 	}
-
-
 
 	/**
 	 * @param args

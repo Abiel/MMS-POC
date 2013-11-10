@@ -49,25 +49,25 @@
 		</div>
 
 <div class="container">
-		<form:form class="form-signin" name='f' action="capability.htm"  method='POST' commandName="product">
+		<form:form class="form-signin" name='f' action="capability.htm"  method='POST' commandName="project">
 			<h2 class="form-signin-heading" >Create New Project (Step-1)</h2>
 			<div>Insert Project Details.</div>
 			<div style="width: 100%; border:2px solid; border-radius:25px; padding: 10 10 10 10">
 				
 				<div style="width: 50%; float: left;"> 
 					Project Name:
-					<input type="text" autofocus="" required="" placeholder="Project Name" class="form-control"> 
+					<input type="text" name="projectName" autofocus="" required="" placeholder="Project Name" class="form-control" value="${projectName}"> 
 					Client Name:
-					<input type="text" autofocus="" required="" placeholder="Client Name" class="form-control">
+					<input type="text" name="clientName" autofocus="" required="" placeholder="Client Name" class="form-control">
 					Project Country:
-					<input type="text" autofocus="" required="" placeholder="Project Country" class="form-control">
+					<input type="text" name="projectCountry" autofocus="" required="" placeholder="Project Country" class="form-control">
 				</div>
 				
 				<div style="margin-left: 52%; ">
 					Project Description:  
-					<input type="text" autofocus="" required="" placeholder="Project Description" class="form-control">
+					<input type="text" name="projectDescription" autofocus="" required="" placeholder="Project Description" class="form-control">
 					Delivery Center:<br>
-					<select>
+					<select name="deliveryCenter" required="">
 						  <option value="NorthAmerica" >North America</option>
 						  <option value="AsiaPacific">Asia Pacific</option>
 						  <option value="Europe">Europe</option>
@@ -75,11 +75,11 @@
 						  <option value="LatinAmerica">Latin America</option>
 						</select>
 					<br>Shared Model:<br>
-					<select>
-					  <option value="volvo">Volvo</option>
-					  <option value="saab">Saab</option>
-					  <option value="opel">Opel</option>
-					  <option value="audi">Audi</option>
+					<select name="sharedModel">
+					  <option value="model1">model-1</option>
+					  <option value="model2">model-2</option>
+					  <option value="model3">model-3</option>
+					  <option value="model4">model-4</option>
 					</select>
 				</div>
 				<div style=clear: both;"></div>
@@ -92,9 +92,9 @@
 					Telematics:<br>
 					<div class="checkbox-list">
 					    <c:forEach var="i" varStatus="status" items="${productList}">
-				          <tr>
-				            <td><input type="checkbox" name="name" value="${i.name}"> <c:out value="${i.name}" /></td>
-				          </tr>
+				          
+				            <input type="checkbox" name="productList" value="${i.uri}"> <c:out value="${i.name}" /><br>
+				          
 				        </c:forEach>
 					</div>
 					Financial Services:<br>

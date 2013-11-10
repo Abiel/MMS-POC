@@ -1,3 +1,3 @@
 <%
-	response.sendRedirect("welcome.htm");
+	response.sendRedirect("product.htm");
 %>

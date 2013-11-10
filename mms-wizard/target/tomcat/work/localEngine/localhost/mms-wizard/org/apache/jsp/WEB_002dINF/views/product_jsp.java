@@ -319,7 +319,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /WEB-INF/views/product.jsp(52,2) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setMethod("POST");
     // /WEB-INF/views/product.jsp(52,2) name = commandName type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_form_005fform_005f0.setCommandName("product");
+    _jspx_th_form_005fform_005f0.setCommandName("project");
     int[] _jspx_push_body_count_form_005fform_005f0 = new int[] { 0 };
     try {
       int _jspx_eval_form_005fform_005f0 = _jspx_th_form_005fform_005f0.doStartTag();
@@ -332,18 +332,20 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t<div style=\"width: 50%; float: left;\"> \r\n");
           out.write("\t\t\t\t\tProject Name:\r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" autofocus=\"\" required=\"\" placeholder=\"Project Name\" class=\"form-control\"> \r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectName\" autofocus=\"\" required=\"\" placeholder=\"Project Name\" class=\"form-control\" value=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${projectName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\"> \r\n");
           out.write("\t\t\t\t\tClient Name:\r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" autofocus=\"\" required=\"\" placeholder=\"Client Name\" class=\"form-control\">\r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"clientName\" autofocus=\"\" required=\"\" placeholder=\"Client Name\" class=\"form-control\">\r\n");
           out.write("\t\t\t\t\tProject Country:\r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" autofocus=\"\" required=\"\" placeholder=\"Project Country\" class=\"form-control\">\r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectCountry\" autofocus=\"\" required=\"\" placeholder=\"Project Country\" class=\"form-control\">\r\n");
           out.write("\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t<div style=\"margin-left: 52%; \">\r\n");
           out.write("\t\t\t\t\tProject Description:  \r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" autofocus=\"\" required=\"\" placeholder=\"Project Description\" class=\"form-control\">\r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectDescription\" autofocus=\"\" required=\"\" placeholder=\"Project Description\" class=\"form-control\">\r\n");
           out.write("\t\t\t\t\tDelivery Center:<br>\r\n");
-          out.write("\t\t\t\t\t<select>\r\n");
+          out.write("\t\t\t\t\t<select name=\"deliveryCenter\" required=\"\">\r\n");
           out.write("\t\t\t\t\t\t  <option value=\"NorthAmerica\" >North America</option>\r\n");
           out.write("\t\t\t\t\t\t  <option value=\"AsiaPacific\">Asia Pacific</option>\r\n");
           out.write("\t\t\t\t\t\t  <option value=\"Europe\">Europe</option>\r\n");
@@ -351,11 +353,11 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\t\t  <option value=\"LatinAmerica\">Latin America</option>\r\n");
           out.write("\t\t\t\t\t\t</select>\r\n");
           out.write("\t\t\t\t\t<br>Shared Model:<br>\r\n");
-          out.write("\t\t\t\t\t<select>\r\n");
-          out.write("\t\t\t\t\t  <option value=\"volvo\">Volvo</option>\r\n");
-          out.write("\t\t\t\t\t  <option value=\"saab\">Saab</option>\r\n");
-          out.write("\t\t\t\t\t  <option value=\"opel\">Opel</option>\r\n");
-          out.write("\t\t\t\t\t  <option value=\"audi\">Audi</option>\r\n");
+          out.write("\t\t\t\t\t<select name=\"sharedModel\">\r\n");
+          out.write("\t\t\t\t\t  <option value=\"model1\">model-1</option>\r\n");
+          out.write("\t\t\t\t\t  <option value=\"model2\">model-2</option>\r\n");
+          out.write("\t\t\t\t\t  <option value=\"model3\">model-3</option>\r\n");
+          out.write("\t\t\t\t\t  <option value=\"model4\">model-4</option>\r\n");
           out.write("\t\t\t\t\t</select>\r\n");
           out.write("\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t<div style=clear: both;\"></div>\r\n");
@@ -434,16 +436,16 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t          <tr>\r\n");
-          out.write("\t\t\t\t            <td><input type=\"checkbox\" name=\"name\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\t\t\t\t          \r\n");
+          out.write("\t\t\t\t            <input type=\"checkbox\" name=\"productList\" value=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i.uri}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write('"');
           out.write('>');
           out.write(' ');
           if (_jspx_meth_c_005fout_005f0(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
-          out.write("</td>\r\n");
-          out.write("\t\t\t\t          </tr>\r\n");
+          out.write("<br>\r\n");
+          out.write("\t\t\t\t          \r\n");
           out.write("\t\t\t\t        ");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -472,7 +474,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/views/product.jsp(96,74) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/product.jsp(96,76) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fout_005f0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f0 = _jspx_th_c_005fout_005f0.doStartTag();
     if (_jspx_th_c_005fout_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

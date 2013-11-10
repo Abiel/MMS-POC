@@ -8,7 +8,7 @@
     <meta content="" name="author">
     <link href="../../docs-assets/ico/favicon.png" rel="shortcut icon">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Application Component</title>
 
     <!-- Bootstrap core CSS -->
    <link href='<spring:url value="/resources/css/bootstrap3/css/bootstrap.css" />' rel="stylesheet">      
@@ -49,43 +49,28 @@
 		</div>
 
 <div class="container">
-		<form:form class="form-signin" name='f' action="appcomponent.htm" method='POST' commandName="product">
-			<h2 class="form-signin-heading" >Create New Project (Step-3)</h2>
-			<div>Project Name: ___</div>			
+		<form:form class="form-signin" name='f' action="service.htm" method='POST' command="product">
+			<h2 class="form-signin-heading" >Create New Project (Step-2)</h2>
+			<div>Project Name: <c:out value="${project.projectName}"/> </div>			
+			<input type="hidden" name="projectName" value="${project.projectName}" >
 			
-			<div style="width: 100%; height:102%; border:2px solid; border-radius:25px; padding: 10 10 30 10">
-				<div>Below you can find the services associated to <br> Please select from the optional capabilities listed below.</div>
-				<div style="width: 50%; float: left;"> 
-					
-					Out of box capabilities:
-					<div class="service-list">
-						<c:forEach var="capability" varStatus="status" items="${product.mandatoryCapabilityList}">
-							<b>Capability:<c:out value="${capability.uri}" /></b><br>
-							<b>Services:</b><br>
-							<div class="checkbox-list">
-					        	<input type="hidden" name="mandatoryCapabilityList[${status.index}].uri" value="${capability.uri}">
-						        <c:forEach var="service" varStatus="status" items="${capability.serviceList}">
-					            	<input type="checkbox" name="mandatoryCapabilityList[${status.index}].serviceList" value="${service.name}"> <c:out value="${service.name}" /><br>
-					        	</c:forEach>
-							</div>
-				        </c:forEach>
+			<div style="width: 100%;  border:2px solid; border-radius:25px; padding: 10 10 30 10">
+				<div>Below you can find the application components that you can select for each service.<br> Please select from the following.</div>
+				
+				<%-- <c:forEach var="product" varStatus="status" items="${project.productList}" > --%>
+					<div style="width: 50%; float: left;"> 
+						<b>Application Components:</b><br>
+						<div class="checkbox-list">
+						    <c:forEach var="ob" varStatus="status" items="${product.mandatoryCapabilityList}">
+					            <input type="checkbox" name="mandatoryCapabilityList" checked="checked" value="${ob.uri}" disabled="disabled"> <c:out value="${ob.name}" /><br>
+					        </c:forEach>
+						</div>
 					</div>
+				<%-- </c:forEach> --%>
+				
+				<div style="margin-left: 52%;">
 					
-					Optional capabilities:
-					<div class="service-list">
-					    <c:forEach var="cap" varStatus="status" items="${product.optionalCapabilityList}">
-							<b>Capability:<c:out value="${cap.uri}" /></b><br>
-							<b>Services:</b><br>
-							<div class="checkbox-list">
-								<input type="hidden" name="optionalCapabilityList[${status.index}].uri" value="${cap.uri}">
-						        <c:forEach var="service" varStatus="status" items="${cap.serviceList}">
-					            	<input type="checkbox" name="optionalCapabilityList[${status.index}].serviceList" value="${service.name}"> <c:out value="${service.name}" /><br>
-					        	</c:forEach>
-							</div>
-				        </c:forEach>
-					</div>
-				</div>
-				<div style="margin-left: 52%; height:100%;">
+					<br><br><br><br><br><br><br><br><br>
 					<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>
 				</div>
 				<div style=clear: both;"></div>

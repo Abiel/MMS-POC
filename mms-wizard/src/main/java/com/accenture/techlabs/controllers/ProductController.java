@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.accenture.techlabs.web;
+package com.accenture.techlabs.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.accenture.techlabs.domain.Capability;
 import com.accenture.techlabs.domain.Product;
+import com.accenture.techlabs.domain.Project;
 import com.accenture.techlabs.httpclient.SparqlClient;
 
 /**
@@ -38,14 +39,14 @@ public class ProductController {
 	
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
 	public String product_post(ModelMap model, HttpServletRequest request) {
+		System.out.println("+++++=========== PRODUCT CONTROLLER===============");
 		try {
-			HttpSession session = request.getSession();
 			String products = SparqlClient.getProducts();
 			List<Product> productList;
 			productList = toProductList(products);
 			model.addAttribute("productList", productList);
+			
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "product";
@@ -54,6 +55,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product_get(ModelMap model) {
+		System.out.println("GET=========== PRODUCT CONTROLLER===============");
 		try {
 			String products = SparqlClient.getProducts();
 			List<Product> productList;
@@ -75,11 +77,17 @@ public class ProductController {
 		for (int i = 0; i < bindings.length(); i++) {
 			JSONObject current = bindings.getJSONObject(i);
 			JSONObject product = current.getJSONObject("product");
-			Product productDomainObj = new Product();
-			productDomainObj.setName(product.getString("value"));
+			Product productDomainObj = new Product(product.getString("value"));
+			String productRDFuri = product.getString("value");
+			String parts[] = productRDFuri.split("#");
+			productDomainObj.setName(parts[1]);
 			if(!allProducts.contains(productDomainObj))
 				allProducts.add(productDomainObj);
 		}
+		Product p = new Product();
+		p.setName("hello");
+		allProducts.add(p);
+		
 		return allProducts;
 	}
 	

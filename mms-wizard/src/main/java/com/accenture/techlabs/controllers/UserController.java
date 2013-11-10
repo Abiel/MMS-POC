@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.accenture.techlabs.web;
+package com.accenture.techlabs.controllers;
 
 import java.util.List;
 

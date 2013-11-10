@@ -3,7 +3,7 @@
  */
 package com.accenture.techlabs.domain;
 
-import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author abiel.m.woldu
@@ -11,12 +11,18 @@ import java.util.Arrays;
  */
 public class Product {
 	private String name;
-	private String[] capability;
+	private String uri;
+	private List<Capability> optionalCapabilityList;
+	private List<Capability> mandatoryCapabilityList;
 
 	/**
 	 * 
 	 */
 	public Product() {
+	}
+	
+	public Product(String uri){
+		this.uri = uri;
 	}
 	
 	
@@ -28,54 +34,34 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
-	public String[] getCapability() {
-		return capability;
-	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(capability);
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
 	
+	public String getUri() {
+		return uri;
+	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		if (!Arrays.equals(capability, other.capability))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+	public void setUri(String uri) {
+		this.uri = uri;
 	}
 
 
-
-
-
-
-	public void setCapability(String[] capability) {
-		this.capability = capability;
+	public List<Capability> getOptionalCapabilityList() {
+		return optionalCapabilityList;
 	}
 
 
+	public void setOptionalCapabilityList(List<Capability> optionalCapabilityList) {
+		this.optionalCapabilityList = optionalCapabilityList;
+	}
 
 
+	public List<Capability> getMandatoryCapabilityList() {
+		return mandatoryCapabilityList;
+	}
+
+
+	public void setMandatoryCapabilityList(List<Capability> mandatoryCapabilityList) {
+		this.mandatoryCapabilityList = mandatoryCapabilityList;
+	}
 
 
 	/**

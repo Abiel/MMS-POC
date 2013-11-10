@@ -1,7 +1,9 @@
 /**
  * 
  */
-package com.accenture.techlabs.forms;
+package com.accenture.techlabs.domain;
+
+import java.util.List;
 
 /**
  * @author abiel.m.woldu
@@ -15,88 +17,71 @@ public class Project {
 	private String deliveryCenter;
 	private String sharedModel;
 	
+	//a project has one or more products
+	private List<Product> productList;
+	
 
 	/**
 	 * 
 	 */
 	public Project() {
-	}
-	
-	
+	}	
 
 	public String getProjectName() {
 		return projectName;
 	}
 
-
-
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
-
-
 
 	public String getClientName() {
 		return clientName;
 	}
 
-
-
 	public void setClientName(String clientName) {
 		this.clientName = clientName;
 	}
-
-
 
 	public String getProjectCountry() {
 		return projectCountry;
 	}
 
-
-
 	public void setProjectCountry(String projectCountry) {
 		this.projectCountry = projectCountry;
 	}
-
-
 
 	public String getProjectDescription() {
 		return projectDescription;
 	}
 
-
-
 	public void setProjectDescription(String projectDescription) {
 		this.projectDescription = projectDescription;
 	}
-
-
 
 	public String getDeliveryCenter() {
 		return deliveryCenter;
 	}
 
-
-
 	public void setDeliveryCenter(String deliveryCenter) {
 		this.deliveryCenter = deliveryCenter;
 	}
-
-
 
 	public String getSharedModel() {
 		return sharedModel;
 	}
 
-
-
 	public void setSharedModel(String sharedModel) {
 		this.sharedModel = sharedModel;
+	}	
+
+	public List<Product> getProductList() {
+		return productList;
 	}
-	
-	
 
-
+	public void setProductList(List<Product> productList) {
+		this.productList = productList;
+	}
 
 	@Override
 	public int hashCode() {
@@ -106,6 +91,8 @@ public class Project {
 				+ ((clientName == null) ? 0 : clientName.hashCode());
 		result = prime * result
 				+ ((deliveryCenter == null) ? 0 : deliveryCenter.hashCode());
+		result = prime * result
+				+ ((productList == null) ? 0 : productList.hashCode());
 		result = prime * result
 				+ ((projectCountry == null) ? 0 : projectCountry.hashCode());
 		result = prime
@@ -139,6 +126,11 @@ public class Project {
 			if (other.deliveryCenter != null)
 				return false;
 		} else if (!deliveryCenter.equals(other.deliveryCenter))
+			return false;
+		if (productList == null) {
+			if (other.productList != null)
+				return false;
+		} else if (!productList.equals(other.productList))
 			return false;
 		if (projectCountry == null) {
 			if (other.projectCountry != null)

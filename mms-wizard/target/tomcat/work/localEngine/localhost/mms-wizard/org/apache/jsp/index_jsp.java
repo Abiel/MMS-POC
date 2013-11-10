@@ -51,7 +51,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
 
-	response.sendRedirect("welcome.htm");
+	response.sendRedirect("product.htm");
 
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

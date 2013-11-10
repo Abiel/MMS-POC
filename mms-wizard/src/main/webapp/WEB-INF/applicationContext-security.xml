@@ -24,18 +24,22 @@
 	<http pattern="/login*" security="none"></http>
 	
 	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/organization*" access="permitAll" />
+		<intercept-url pattern="/department*" access="permitAll" />
+		<intercept-url pattern="/employee*" access="permitAll" />
 		<intercept-url pattern="/welcome*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/product*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/capability*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/provider*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/service*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/appcomponent" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/serviceprovider*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/businessapi*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/*" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
 		
-		<form-login login-page="/login.htm" default-target-url="/welcome.htm" authentication-failure-url="/login.htm?failed=1" />
-		<logout logout-success-url="/welcome.htm" />
+		<form-login login-page="/login.htm" default-target-url="/product.htm" authentication-failure-url="/login.htm?failed=1" />
+		<logout logout-success-url="/login.htm" />
 	</http>
  
 	<authentication-manager>

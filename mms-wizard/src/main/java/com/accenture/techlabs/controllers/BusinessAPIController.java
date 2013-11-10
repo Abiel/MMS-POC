@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.accenture.techlabs.web;
+package com.accenture.techlabs.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,23 +13,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  */
 @Controller
-public class ServiceProviderController {
+public class BusinessAPIController {
 
 	/**
 	 * 
 	 */
-	public ServiceProviderController() {
+	public BusinessAPIController() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@RequestMapping(value="/serviceprovider", method = RequestMethod.POST)
-	public String provider_post(ModelMap model) {
-		return "serviceprovider";
+	@RequestMapping(value="/businessapi", method = RequestMethod.POST)
+	public String businessapi_post(ModelMap model) {
+		return "businessapi";
 	}
 	
-	@RequestMapping(value="/serviceprovider", method = RequestMethod.GET)
-	public String provider_get(ModelMap model) {
-		return "serviceprovider";
+	@RequestMapping(value="/businessapi", method = RequestMethod.GET)
+	public String businessapi_get(ModelMap model) {
+		return "businessapi";
 	}
 
 	/**

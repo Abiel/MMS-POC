@@ -49,26 +49,30 @@
 		</div>
 
 <div class="container">
-		<form:form class="form-signin" name='f' action="capability.htm"  method='POST' commandName="product">
+		<form:form class="form-signin" name='f' action="service.htm" method='POST' command="product">
 			<h2 class="form-signin-heading" >Create New Project (Step-2)</h2>
-			<div>Project Name: ___</div>			
+			<div>Project Name: <c:out value="${project.projectName}"/> </div>			
+			<input type="hidden" name="projectName" value="${project.projectName}" >
 			
 			<div style="width: 100%;  border:2px solid; border-radius:25px; padding: 10 10 30 10">
 				<div>Below you can find the capabilities that are already included out of the box in the selected domain.<br> Please select from the optional capabilities listed below.</div>
-				<div style="width: 50%; float: left;"> 
-					<b>Out of the Box Capabilities:</b><br>
-					<div class="checkbox-list">
-					    <c:forEach var="ob" varStatus="status" items="${capabilityList}">
-				            <input type="checkbox" path="capability" name="capability" checked="checked" value="${ob.name}" disabled="disabled"> <c:out value="${ob.name}" /></td>
-				        </c:forEach>
+				
+				<%-- <c:forEach var="product" varStatus="status" items="${project.productList}" > --%>
+					<div style="width: 50%; float: left;"> 
+						<b>Out of the Box Capabilities:</b><br>
+						<div class="checkbox-list">
+						    <c:forEach var="ob" varStatus="status" items="${product.mandatoryCapabilityList}">
+					            <input type="checkbox" name="mandatoryCapabilityList" checked="checked" value="${ob.uri}" disabled="disabled"> <c:out value="${ob.name}" /><br>
+					        </c:forEach>
+						</div>
+						<b>Optional Capabilities:</b><br>
+						<div class="checkbox-list">
+						     <c:forEach var="ob" varStatus="status" items="${product.optionalCapabilityList}">
+					            <input type="checkbox"  name="optionalCapabilityList" value="${ob.uri}"> <c:out value="${ob.name}" /><br>
+					        </c:forEach>
+						</div> 
 					</div>
-					<b>Optional Capabilities:</b><br>
-					<div class="checkbox-list">
-					     <c:forEach var="ob" varStatus="status" items="${capabilityList}">
-				            <input type="checkbox" path="capability" name="capability" value="${ob.name}"> <c:out value="${ob.name}" /></td>
-				        </c:forEach>
-					</div>
-				</div>
+				<%-- </c:forEach> --%>
 				
 				<div style="margin-left: 52%;">
 					
@@ -78,7 +82,6 @@
 				<div style=clear: both;"></div>
 			</div>
 		</form:form>
-
 	</div> <!-- /container -->
 
 

@@ -47,3 +47,5 @@ body {
 	position: relative;
 }
 .checkbox-list { border:2px solid #ccc; width:100%; height: 100px; overflow-y: scroll; }
+
+.service-list { border:1px solid #ccc; width:100%; height: 285px; overflow-y: scroll; }
