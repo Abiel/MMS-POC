@@ -20,6 +20,8 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fform_0026_005fname_005fmethod_005fcommandName_005fclass_005faction;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -33,6 +35,8 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     _005fjspx_005ftagPool_005fform_005fform_0026_005fname_005fmethod_005fcommandName_005fclass_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
@@ -42,6 +46,8 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     _005fjspx_005ftagPool_005fform_005fform_0026_005fname_005fmethod_005fcommandName_005fclass_005faction.release();
     _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.release();
     _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.release();
+    _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.release();
+    _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -339,7 +345,6 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
             return true;
           out.write("\r\n");
           out.write("\t\t\t\t\t</div>\r\n");
-          out.write("\t\t\t\t\t\r\n");
           out.write("\t\t\t\t\tOptional capabilities:\r\n");
           out.write("\t\t\t\t\t<div class=\"service-list\">\r\n");
           out.write("\t\t\t\t\t    ");
@@ -347,6 +352,7 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
             return true;
           out.write("\r\n");
           out.write("\t\t\t\t\t</div>\r\n");
+          out.write("\t\t\t\t\t\r\n");
           out.write("\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t<div style=\"margin-left: 52%; height:100%;\">\r\n");
           out.write("\t\t\t\t\t<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Next Step</button>\r\n");
@@ -384,7 +390,7 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /WEB-INF/views/service.jsp(62,6) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("capability");
     // /WEB-INF/views/service.jsp(62,6) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setVarStatus("status");
+    _jspx_th_c_005fforEach_005f0.setVarStatus("statusCapability");
     // /WEB-INF/views/service.jsp(62,6) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${product.mandatoryCapabilityList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
@@ -399,11 +405,10 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("</b><br>\r\n");
           out.write("\t\t\t\t\t\t\t<b>Services:</b><br>\r\n");
           out.write("\t\t\t\t\t\t\t<div class=\"checkbox-list\">\r\n");
-          out.write("\t\t\t\t\t        \t<input type=\"hidden\" name=\"mandatoryCapabilityList[");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${status.index}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("].uri\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.uri}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("\">\r\n");
+          out.write("\t\t\t\t\t        \t");
+          if (_jspx_meth_form_005fhidden_005f0(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
+            return true;
+          out.write("\r\n");
           out.write("\t\t\t\t\t\t        ");
           if (_jspx_meth_c_005fforEach_005f1(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
@@ -448,6 +453,35 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_form_005fhidden_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:hidden
+    org.springframework.web.servlet.tags.form.HiddenInputTag _jspx_th_form_005fhidden_005f0 = (org.springframework.web.servlet.tags.form.HiddenInputTag) _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.HiddenInputTag.class);
+    _jspx_th_form_005fhidden_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fhidden_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
+    // /WEB-INF/views/service.jsp(66,14) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fhidden_005f0.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("mandatoryCapabilityList[${statusCapability.index}].uri", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/service.jsp(66,14) null
+    _jspx_th_form_005fhidden_005f0.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fhidden_005f0 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fhidden_005f0 = _jspx_th_form_005fhidden_005f0.doStartTag();
+      if (_jspx_th_form_005fhidden_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fhidden_005f0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fhidden_005f0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fhidden_005f0.doFinally();
+      _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fhidden_005f0);
+    }
+    return false;
+  }
+
   private boolean _jspx_meth_c_005fforEach_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f0)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -459,7 +493,7 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /WEB-INF/views/service.jsp(67,14) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setVar("service");
     // /WEB-INF/views/service.jsp(67,14) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f1.setVarStatus("status");
+    _jspx_th_c_005fforEach_005f1.setVarStatus("statusService");
     // /WEB-INF/views/service.jsp(67,14) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.serviceList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
@@ -468,12 +502,9 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_005fforEach_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t\t            \t<input type=\"checkbox\" name=\"mandatoryCapabilityList[");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${status.index}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("].serviceList\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write('"');
-          out.write('>');
+          out.write("\t\t\t\t\t            \t");
+          if (_jspx_meth_form_005fcheckbox_005f0(_jspx_th_c_005fforEach_005f1, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f1))
+            return true;
           out.write(' ');
           if (_jspx_meth_c_005fout_005f1(_jspx_th_c_005fforEach_005f1, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f1))
             return true;
@@ -498,6 +529,35 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_form_005fcheckbox_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f1)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:checkbox
+    org.springframework.web.servlet.tags.form.CheckboxTag _jspx_th_form_005fcheckbox_005f0 = (org.springframework.web.servlet.tags.form.CheckboxTag) _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.CheckboxTag.class);
+    _jspx_th_form_005fcheckbox_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fcheckbox_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f1);
+    // /WEB-INF/views/service.jsp(68,18) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f0.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("mandatoryCapabilityList[${statusCapability.index}].serviceList", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/service.jsp(68,18) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fcheckbox_005f0 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fcheckbox_005f0 = _jspx_th_form_005fcheckbox_005f0.doStartTag();
+      if (_jspx_th_form_005fcheckbox_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fcheckbox_005f0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fcheckbox_005f0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fcheckbox_005f0.doFinally();
+      _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fcheckbox_005f0);
+    }
+    return false;
+  }
+
   private boolean _jspx_meth_c_005fout_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f1)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -506,7 +566,7 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f1 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f1);
-    // /WEB-INF/views/service.jsp(68,126) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/service.jsp(68,130) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fout_005f1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f1 = _jspx_th_c_005fout_005f1.doStartTag();
     if (_jspx_th_c_005fout_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -525,11 +585,11 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/service.jsp(76,9) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f2.setVar("cap");
-    // /WEB-INF/views/service.jsp(76,9) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f2.setVarStatus("status");
-    // /WEB-INF/views/service.jsp(76,9) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/service.jsp(75,9) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f2.setVar("optionalCapability");
+    // /WEB-INF/views/service.jsp(75,9) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f2.setVarStatus("statusCapability");
+    // /WEB-INF/views/service.jsp(75,9) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${product.optionalCapabilityList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f2 = new int[] { 0 };
     try {
@@ -543,11 +603,10 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("</b><br>\r\n");
           out.write("\t\t\t\t\t\t\t<b>Services:</b><br>\r\n");
           out.write("\t\t\t\t\t\t\t<div class=\"checkbox-list\">\r\n");
-          out.write("\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"optionalCapabilityList[");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${status.index}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("].uri\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${cap.uri}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t");
+          if (_jspx_meth_form_005fhidden_005f1(_jspx_th_c_005fforEach_005f2, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f2))
+            return true;
+          out.write("\r\n");
           out.write("\t\t\t\t\t\t        ");
           if (_jspx_meth_c_005fforEach_005f3(_jspx_th_c_005fforEach_005f2, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f2))
             return true;
@@ -581,14 +640,43 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f2 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f2);
-    // /WEB-INF/views/service.jsp(77,21) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fout_005f2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${cap.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/service.jsp(76,21) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fout_005f2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${optionalCapability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f2 = _jspx_th_c_005fout_005f2.doStartTag();
     if (_jspx_th_c_005fout_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f2);
       return true;
     }
     _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f2);
+    return false;
+  }
+
+  private boolean _jspx_meth_form_005fhidden_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f2, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f2)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:hidden
+    org.springframework.web.servlet.tags.form.HiddenInputTag _jspx_th_form_005fhidden_005f1 = (org.springframework.web.servlet.tags.form.HiddenInputTag) _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.HiddenInputTag.class);
+    _jspx_th_form_005fhidden_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fhidden_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f2);
+    // /WEB-INF/views/service.jsp(79,8) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fhidden_005f1.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].uri", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/service.jsp(79,8) null
+    _jspx_th_form_005fhidden_005f1.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${optionalCapability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fhidden_005f1 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fhidden_005f1 = _jspx_th_form_005fhidden_005f1.doStartTag();
+      if (_jspx_th_form_005fhidden_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fhidden_005f1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fhidden_005f1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fhidden_005f1.doFinally();
+      _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fhidden_005f1);
+    }
     return false;
   }
 
@@ -600,24 +688,21 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f3 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f2);
-    // /WEB-INF/views/service.jsp(81,14) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/service.jsp(80,14) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f3.setVar("service");
-    // /WEB-INF/views/service.jsp(81,14) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f3.setVarStatus("status");
-    // /WEB-INF/views/service.jsp(81,14) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${cap.serviceList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/service.jsp(80,14) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f3.setVarStatus("statusService");
+    // /WEB-INF/views/service.jsp(80,14) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${optionalCapability.serviceList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f3 = new int[] { 0 };
     try {
       int _jspx_eval_c_005fforEach_005f3 = _jspx_th_c_005fforEach_005f3.doStartTag();
       if (_jspx_eval_c_005fforEach_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t\t            \t<input type=\"checkbox\" name=\"optionalCapabilityList[");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${status.index}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("].serviceList\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write('"');
-          out.write('>');
+          out.write("\t\t\t\t\t            \t");
+          if (_jspx_meth_form_005fcheckbox_005f1(_jspx_th_c_005fforEach_005f3, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f3))
+            return true;
           out.write(' ');
           if (_jspx_meth_c_005fout_005f3(_jspx_th_c_005fforEach_005f3, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f3))
             return true;
@@ -642,6 +727,35 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_form_005fcheckbox_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f3, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f3)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:checkbox
+    org.springframework.web.servlet.tags.form.CheckboxTag _jspx_th_form_005fcheckbox_005f1 = (org.springframework.web.servlet.tags.form.CheckboxTag) _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.CheckboxTag.class);
+    _jspx_th_form_005fcheckbox_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fcheckbox_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f3);
+    // /WEB-INF/views/service.jsp(81,18) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f1.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].serviceList", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/service.jsp(81,18) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fcheckbox_005f1 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fcheckbox_005f1 = _jspx_th_form_005fcheckbox_005f1.doStartTag();
+      if (_jspx_th_form_005fcheckbox_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fcheckbox_005f1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fcheckbox_005f1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fcheckbox_005f1.doFinally();
+      _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fcheckbox_005f1);
+    }
+    return false;
+  }
+
   private boolean _jspx_meth_c_005fout_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f3, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f3)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -650,7 +764,7 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f3 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f3);
-    // /WEB-INF/views/service.jsp(82,125) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/service.jsp(81,129) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fout_005f3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f3 = _jspx_th_c_005fout_005f3.doStartTag();
     if (_jspx_th_c_005fout_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

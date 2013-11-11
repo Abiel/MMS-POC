@@ -61,23 +61,26 @@ public class ServiceController {
 			c.setServiceList(relatedServices);
 			mandatoryCapListWithServices.add(c);
 		}
-		model.addAttribute("mandatoryCapabilityList", mandatoryCapListWithServices);
+		//model.addAttribute("mandatoryCapabilityList", mandatoryCapListWithServices);
 	
 		//STEP 3.Retrieve all services associated with each optional capability that was selected.
 		System.out.println("-----------------------------------------------------------------optional");
 		List<Capability> optionalCapListWithServices = new ArrayList<Capability>(); 
-		for(Capability c: optionalCaps){
-			System.out.println("Cap: " + c.getUri());
-			List<Service> relatedServices = getServicesForCapability(c.getUri());
-			c.setServiceList(relatedServices);
-			optionalCapListWithServices.add(c);
+		if(optionalCaps != null){
+			for(Capability c: optionalCaps){
+				System.out.println("Cap: " + c.getUri());
+				List<Service> relatedServices = getServicesForCapability(c.getUri());
+				c.setServiceList(relatedServices);
+				optionalCapListWithServices.add(c);
+			}
+			System.out.println("capWithserv: " + optionalCapListWithServices);
+			//model.addAttribute("optionalCapabilityList", optionalCapListWithServices);
 		}
-		System.out.println("capWithserv: " + optionalCapListWithServices);
-		model.addAttribute("optionalCapabilityList", optionalCapListWithServices);
 		//-----testing
 		product.setMandatoryCapabilityList(mandatoryCapListWithServices);
 		product.setOptionalCapabilityList(optionalCapListWithServices);
 		model.addAttribute("product", product);
+		System.out.println("======================================================================== Done");
 		return "service";
 	}
 	

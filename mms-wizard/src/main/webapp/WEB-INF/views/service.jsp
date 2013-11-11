@@ -59,31 +59,31 @@
 					
 					Out of box capabilities:
 					<div class="service-list">
-						<c:forEach var="capability" varStatus="status" items="${product.mandatoryCapabilityList}">
+						<c:forEach var="capability" varStatus="statusCapability" items="${product.mandatoryCapabilityList}">
 							<b>Capability:<c:out value="${capability.uri}" /></b><br>
 							<b>Services:</b><br>
 							<div class="checkbox-list">
-					        	<input type="hidden" name="mandatoryCapabilityList[${status.index}].uri" value="${capability.uri}">
-						        <c:forEach var="service" varStatus="status" items="${capability.serviceList}">
-					            	<input type="checkbox" name="mandatoryCapabilityList[${status.index}].serviceList" value="${service.name}"> <c:out value="${service.name}" /><br>
+					        	<form:hidden path="mandatoryCapabilityList[${statusCapability.index}].uri" value="${capability.uri}" />
+						        <c:forEach var="service" varStatus="statusService" items="${capability.serviceList}">
+					            	<form:checkbox path="mandatoryCapabilityList[${statusCapability.index}].serviceList" value="${service.name}" /> <c:out value="${service.name}" /><br>
+					        	</c:forEach>
+							</div>
+				        </c:forEach>
+					</div>
+					Optional capabilities:
+					<div class="service-list">
+					    <c:forEach var="optionalCapability" varStatus="statusCapability" items="${product.optionalCapabilityList}">
+							<b>Capability:<c:out value="${optionalCapability.uri}" /></b><br>
+							<b>Services:</b><br>
+							<div class="checkbox-list">
+								<form:hidden path="optionalCapabilityList[${statusCapability.index}].uri" value="${optionalCapability.uri}" />
+						        <c:forEach var="service" varStatus="statusService" items="${optionalCapability.serviceList}">
+					            	<form:checkbox path="optionalCapabilityList[${statusCapability.index}].serviceList" value="${service.name}" /> <c:out value="${service.name}" /><br>
 					        	</c:forEach>
 							</div>
 				        </c:forEach>
 					</div>
 					
-					Optional capabilities:
-					<div class="service-list">
-					    <c:forEach var="cap" varStatus="status" items="${product.optionalCapabilityList}">
-							<b>Capability:<c:out value="${cap.uri}" /></b><br>
-							<b>Services:</b><br>
-							<div class="checkbox-list">
-								<input type="hidden" name="optionalCapabilityList[${status.index}].uri" value="${cap.uri}">
-						        <c:forEach var="service" varStatus="status" items="${cap.serviceList}">
-					            	<input type="checkbox" name="optionalCapabilityList[${status.index}].serviceList" value="${service.name}"> <c:out value="${service.name}" /><br>
-					        	</c:forEach>
-							</div>
-				        </c:forEach>
-					</div>
 				</div>
 				<div style="margin-left: 52%; height:100%;">
 					<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>

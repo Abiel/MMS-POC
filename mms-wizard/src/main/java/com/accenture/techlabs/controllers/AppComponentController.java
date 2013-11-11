@@ -3,6 +3,7 @@
  */
 package com.accenture.techlabs.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,11 +41,15 @@ public class AppComponentController {
 		System.out.println("size mandatory cap: " + product.getMandatoryCapabilityList().size());
 		List<Capability> mandatoryCapsList = product.getMandatoryCapabilityList();
 		System.out.println("Printing Mandatory List...");
-		printCapabilityList(mandatoryCapsList);
+		List<Capability> cleanedMandatoryCapabilities = cleanUpCapabilityList(mandatoryCapsList);
+		product.setMandatoryCapabilityList(cleanedMandatoryCapabilities);
+		printCapabilityList(product.getMandatoryCapabilityList());
 		
 		List<Capability> optionalCapsList = product.getOptionalCapabilityList();
 		System.out.println("Printing optional List...");
-		printCapabilityList(optionalCapsList);
+		List<Capability> cleanedOptionalCapabilities = cleanUpCapabilityList(optionalCapsList);
+		product.setOptionalCapabilityList(cleanedOptionalCapabilities);
+		printCapabilityList(product.getOptionalCapabilityList());
 		System.out.println("size optional cap: " + product.getOptionalCapabilityList().size());
 		return "appcomponent";
 	}
@@ -54,6 +59,19 @@ public class AppComponentController {
             HttpServletResponse response, BindingResult result, ModelMap model) {
 		System.out.println("GET===============APP COMPONENT-===============");
 		return "appcomponent";
+	}
+	
+	/**
+	 * Removes capabilities with null services.
+	 * @param capabilityList
+	 */
+	public List<Capability> cleanUpCapabilityList(List<Capability> capabilityList){
+		List<Capability> newCapabilityList = new ArrayList<Capability>();
+		for(Capability c: capabilityList){
+			if(c.getServiceList() != null)
+				newCapabilityList.add(c);
+		}
+		return newCapabilityList;
 	}
 	
 	private void printCapabilityList(List<Capability> capabilityList){
