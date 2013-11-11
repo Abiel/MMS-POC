@@ -50,7 +50,7 @@
 
 <div class="container">
 		<form:form class="form-signin" name='f' action="service.htm" method='POST' command="product">
-			<h2 class="form-signin-heading" >Create New Project (Step-2)</h2>
+			<h2 class="form-signin-heading" >Select AppComponent (Step-4)</h2>
 			<div>Project Name: <c:out value="${project.projectName}"/> </div>			
 			<input type="hidden" name="projectName" value="${project.projectName}" >
 			

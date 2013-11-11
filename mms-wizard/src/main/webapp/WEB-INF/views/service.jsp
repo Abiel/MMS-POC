@@ -8,7 +8,7 @@
     <meta content="" name="author">
     <link href="../../docs-assets/ico/favicon.png" rel="shortcut icon">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Service</title>
 
     <!-- Bootstrap core CSS -->
    <link href='<spring:url value="/resources/css/bootstrap3/css/bootstrap.css" />' rel="stylesheet">      

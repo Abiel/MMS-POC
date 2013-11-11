@@ -9,20 +9,41 @@ package com.accenture.techlabs.domain;
  */
 public class AppComponent {
 	private String uri;
+	private String name;
 
 	/**
 	 * 
 	 */
 	public AppComponent() {
-		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public String getUri() {
+		return uri;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public static void main(String[] args) {
 	}
 
 }

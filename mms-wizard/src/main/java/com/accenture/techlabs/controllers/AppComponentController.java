@@ -3,12 +3,15 @@
  */
 package com.accenture.techlabs.controllers;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.accenture.techlabs.dao.ProjectDao;
 import com.accenture.techlabs.domain.Capability;
 import com.accenture.techlabs.domain.Product;
 import com.accenture.techlabs.domain.Project;
@@ -27,7 +31,9 @@ import com.accenture.techlabs.domain.Service;
  */
 @Controller
 public class AppComponentController {
-
+	@Autowired
+	ProjectDao projectDao;
+	
 	/**
 	 * 
 	 */
@@ -38,6 +44,10 @@ public class AppComponentController {
 	public String businessapi_post(@ModelAttribute("product") Product product, HttpServletRequest request,
             HttpServletResponse response, BindingResult result, ModelMap model) {
 		System.out.println("POST===============APP COMPONENT-===============");
+		System.out.println("######################## dataSource is populated: " + projectDao.getDataSource());
+		HttpSession session = request.getSession();
+		Project project = (Project) session.getAttribute("project");
+		System.out.println("Project:: "+ project.toString());;
 		System.out.println("size mandatory cap: " + product.getMandatoryCapabilityList().size());
 		List<Capability> mandatoryCapsList = product.getMandatoryCapabilityList();
 		System.out.println("Printing Mandatory List...");
@@ -51,6 +61,11 @@ public class AppComponentController {
 		product.setOptionalCapabilityList(cleanedOptionalCapabilities);
 		printCapabilityList(product.getOptionalCapabilityList());
 		System.out.println("size optional cap: " + product.getOptionalCapabilityList().size());
+		try {
+			projectDao.insertProjectAndAllRelatedData(project);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return "appcomponent";
 	}
 	
@@ -95,6 +110,17 @@ public class AppComponentController {
 				System.out.println("\t\tSer is null.");
 			}
 	}
+	
+	
+	public ProjectDao getProjectDao() {
+		return projectDao;
+	}
+
+	public void setProjectDao(ProjectDao projectDao) {
+		System.out.println("Setter injection for dao...");
+		this.projectDao = projectDao;
+	}
+
 	/**
 	 * @param args
 	 */

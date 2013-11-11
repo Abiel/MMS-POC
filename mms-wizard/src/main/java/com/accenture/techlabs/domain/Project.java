@@ -5,16 +5,59 @@ package com.accenture.techlabs.domain;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * @author abiel.m.woldu
  *
  */
+
+/*@Entity
+@Table(name = "project")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Project.findAll", query = "SELECT p FROM Project p"),
+    @NamedQuery(name = "Project.findByProjectId", query = "SELECT p FROM Project p WHERE u.userId = :userId")
+})*/
 public class Project {
+	/*@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")*/
+	private long id;
+	
+	/*@NotNull
+	@Size(min = 1, max = 64)
+	@Column(name = "projectname")*/
 	private String projectName;
+	
+	/*@Size(min = 1, max = 64)
+	@Column(name = "clientname")*/
 	private String clientName;
+	
+	/*@Size(min = 1, max = 64)
+	@Column(name = "projectcountry")*/
 	private String projectCountry;
+	
+	/*@Size(min = 1, max = 64)
+	@Column(name = "projectdescription")*/
 	private String projectDescription;
+	
+	/*@Size(min = 1, max = 64)
+	@Column(name = "deliverycenter")*/
 	private String deliveryCenter;
+	
+	/*@Size(min = 1, max = 64)
+	@Column(name = "sharedmodel")*/
 	private String sharedModel;
 	
 	//a project has one or more products
@@ -26,6 +69,11 @@ public class Project {
 	 */
 	public Project() {
 	}	
+
+	public Project(long id) {
+		this.id = id;
+	}
+
 
 	public String getProjectName() {
 		return projectName;
@@ -81,6 +129,14 @@ public class Project {
 
 	public void setProductList(List<Product> productList) {
 		this.productList = productList;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	@Override
@@ -155,7 +211,17 @@ public class Project {
 		return true;
 	}
 
+	
 
+
+	@Override
+	public String toString() {
+		return "Project [projectName=" + projectName + ", clientName="
+				+ clientName + ", projectCountry=" + projectCountry
+				+ ", projectDescription=" + projectDescription
+				+ ", deliveryCenter=" + deliveryCenter + ", sharedModel="
+				+ sharedModel + ", productList=" + productList + "]";
+	}
 
 	/**
 	 * @param args

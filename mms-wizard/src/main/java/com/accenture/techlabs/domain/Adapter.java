@@ -9,12 +9,10 @@ package com.accenture.techlabs.domain;
  */
 public class Adapter {
 	private String uri;
+	private String name;
 	
-	/**
-	 * 
-	 */
+
 	public Adapter() {
-		// TODO Auto-generated constructor stub
 	}	
 
 	public String getUri() {
@@ -23,14 +21,20 @@ public class Adapter {
 
 	public void setUri(String uri) {
 		this.uri = uri;
+	}	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }
