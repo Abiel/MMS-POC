@@ -7,20 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.accenture.techlabs.domain.Capability;
 import com.accenture.techlabs.domain.Product;
-import com.accenture.techlabs.domain.Project;
 import com.accenture.techlabs.httpclient.SparqlClient;
 
 /**
@@ -39,7 +35,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
 	public String product_post(ModelMap model, HttpServletRequest request) {
-		System.out.println("+++++=========== PRODUCT CONTROLLER===============");
+		System.out.println("=========== PRODUCT CONTROLLER===============");
 		try {
 			String products = SparqlClient.getProducts();
 			List<Product> productList;
@@ -84,9 +80,15 @@ public class ProductController {
 			if(!allProducts.contains(productDomainObj))
 				allProducts.add(productDomainObj);
 		}
+		
+		//To Do: remove these two products. Retrieve data from ontology.
 		Product p = new Product();
-		p.setName("hello");
+		p.setName("Connected Vehicle");
 		allProducts.add(p);
+		
+		Product p1 = new Product();
+		p1.setName("Equipment Monitoring");
+		allProducts.add(p1);
 		
 		return allProducts;
 	}

@@ -29,28 +29,29 @@ import com.accenture.techlabs.httpclient.AppComponentSparqlClient;
 
 /**
  * @author abiel.m.woldu
- *
+ * Why this class? 
+ * As the user finishes selecting Product->Capability->Service->AppComponent/Adapter; this controller persists all this data to database.
  */
 @Controller
-public class AppComponentController {
+public class PersistenceController {
 	@Autowired
 	ProjectDao projectDao;
 	
 	/**
 	 * 
 	 */
-	public AppComponentController() {
+	public PersistenceController() {
 	}
 	
-	@RequestMapping(value="/appcomponent", method = RequestMethod.POST)
-	public String businessapi_post(@ModelAttribute("product") Product product, HttpServletRequest request,
+	@RequestMapping(value="/persistence", method = RequestMethod.POST)
+	public String persist_post(@ModelAttribute("product") Product product, HttpServletRequest request,
             HttpServletResponse response, BindingResult result, ModelMap model) {
-		System.out.println("POST===============APP COMPONENT-===============");
+		System.out.println("POST===============PERSIST CONTROLLER-===============");
 		
 		HttpSession session = request.getSession();
 		Project project = (Project) session.getAttribute("project");
 		System.out.println("Project:: "+ project.toString());
-		System.out.println("size mandatory cap: " + product.getMandatoryCapabilityList().size());
+		//System.out.println("size mandatory cap: " + product.getMandatoryCapabilityList().size());
 		List<Capability> mandatoryCapsList = product.getMandatoryCapabilityList();
 		System.out.println("Printing Mandatory List...");
 		List<Capability> cleanedMandatoryCapabilities = cleanUpCapabilityList(mandatoryCapsList);
@@ -62,10 +63,10 @@ public class AppComponentController {
 		List<Capability> cleanedOptionalCapabilities = cleanUpCapabilityList(optionalCapsList);
 		product.setOptionalCapabilityList(cleanedOptionalCapabilities);
 		printCapabilityList(product.getOptionalCapabilityList());
-		System.out.println("size optional cap: " + product.getOptionalCapabilityList().size());
+		//System.out.println("size optional cap: " + product.getOptionalCapabilityList().size());
 		
 		//STEP. For each of the services selected, populate them with components.
-		AppComponentSparqlClient.getAppComponentsForAllServices(product);
+		//AppComponentSparqlClient.getAppComponentsForAllServices(product);
 		
 		//STEP. Is it necessary to set product to session in here? because it will change as app components are added to services down in the tree.
 		List<Product> newProductList = new ArrayList<Product>();
@@ -79,14 +80,14 @@ public class AppComponentController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}*/
-		return "appcomponent";
+		return "persistence";
 	}
 	
-	@RequestMapping(value="/appcomponent", method = RequestMethod.GET)
-	public String businessapi_get(@ModelAttribute("project") Project project, HttpServletRequest request,
+	@RequestMapping(value="/persistence", method = RequestMethod.GET)
+	public String persist_get(@ModelAttribute("project") Project project, HttpServletRequest request,
             HttpServletResponse response, BindingResult result, ModelMap model) {
-		System.out.println("GET===============APP COMPONENT-===============");
-		return "appcomponent";
+		System.out.println("GET===============PERSIST CONTROLLER-===============");
+		return "persistence";
 	}
 	
 	/**
@@ -94,6 +95,7 @@ public class AppComponentController {
 	 * @param capabilityList
 	 */
 	public List<Capability> cleanUpCapabilityList(List<Capability> capabilityList){
+		if(capabilityList==null) return null; 
 		List<Capability> newCapabilityList = new ArrayList<Capability>();
 		for(Capability c: capabilityList){
 			if(c.getServiceList() != null)

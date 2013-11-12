@@ -23,6 +23,7 @@ import com.accenture.techlabs.domain.Product;
 import com.accenture.techlabs.domain.Project;
 import com.accenture.techlabs.domain.Service;
 import com.accenture.techlabs.forms.CapabilityFormData;
+import com.accenture.techlabs.httpclient.ServiceSparqlClient;
 
 /**
  * @author abiel.m.woldu
@@ -42,31 +43,38 @@ public class ServiceController {
             HttpServletResponse response, BindingResult result, ModelMap model) {
 		System.out.println("POST =========== SERVICE CONTROLLER===============");
 		
-		//STEP 1. Set the mandatory capabilities and optional capabilities to session.
+		//STEP 1. Set the optional capabilities to session.
+		//        REMEMBER: mandatory capabilities come from session (user doesn't have a say on mandatory capabilities)
 		HttpSession session = request.getSession();
 		Project project = (Project) session.getAttribute("project");
 		Product productInSession = project.getProductList().get(0);
-		List<Capability> optionalCaps = product.getOptionalCapabilityList();
-		System.out.println("List Optional: " + optionalCaps);
-		productInSession.setOptionalCapabilityList(optionalCaps); //test if this session data is persisted.
-		//List<Capability> mandatory = productInSession.getOptionalCapabilityList();
 		
-		//STEP 2. Retrieve all services associated with mandatory capabilities.
-		List<Capability> mandatoryCapListWithServices = new ArrayList<Capability>(); 
 		List<Capability> mandatoryCaps = project.getProductList().get(0).getMandatoryCapabilityList();
+		List<Capability> optionalCaps = product.getOptionalCapabilityList();
+		
+		System.out.println("List Optional: " + optionalCaps);
+		productInSession.setMandatoryCapabilityList(mandatoryCaps);
+		productInSession.setOptionalCapabilityList(optionalCaps); //test if this session data is persisted.
+		
+		
+		//STEP 2. Populate Services to mandatory capabilities.
+		List<Capability> mandatoryCapListWithServices = new ArrayList<Capability>(); 
+		mandatoryCapListWithServices = ServiceSparqlClient.getServicesForCapabilities(mandatoryCaps);
+		
 		System.out.println("---------------------------------------------------------------mandatory");
 		for(Capability c: mandatoryCaps){
 			System.out.println("MandatoryCap: " + c.getUri());
-			List<Service> relatedServices = getServicesForCapability(c.getUri());
+			/*List<Service> relatedServices = getServicesForCapability(c.getUri());
 			c.setServiceList(relatedServices);
-			mandatoryCapListWithServices.add(c);
+			mandatoryCapListWithServices.add(c);*/
 		}
 		//model.addAttribute("mandatoryCapabilityList", mandatoryCapListWithServices);
 	
-		//STEP 3.Retrieve all services associated with each optional capability that was selected.
+		//STEP 3. Populate Services to optional capabilities that were selected.
 		System.out.println("-----------------------------------------------------------------optional");
-		List<Capability> optionalCapListWithServices = new ArrayList<Capability>(); 
-		if(optionalCaps != null){
+		//List<Capability> optionalCaps = project.getProductList().get(0).getOptionalCapabilityList();
+		List<Capability> optionalCapListWithServices = ServiceSparqlClient.getServicesForCapabilities(optionalCaps);
+		/*if(optionalCaps != null){
 			for(Capability c: optionalCaps){
 				System.out.println("Cap: " + c.getUri());
 				List<Service> relatedServices = getServicesForCapability(c.getUri());
@@ -75,17 +83,18 @@ public class ServiceController {
 			}
 			System.out.println("capWithserv: " + optionalCapListWithServices);
 			//model.addAttribute("optionalCapabilityList", optionalCapListWithServices);
-		}
+		}*/
 		//-----testing
 		product.setMandatoryCapabilityList(mandatoryCapListWithServices);
 		product.setOptionalCapabilityList(optionalCapListWithServices);
+		model.addAttribute("projectName", project.getProjectName());
 		model.addAttribute("product", product);
 		System.out.println("======================================================================== Done");
 		return "service";
 	}
 	
 	
-	private List<Service> getServicesForCapability(String capability){
+/*	private List<Service> getServicesForCapability(String capability){
 		List<Service> servicesList = new ArrayList<Service>();
 		int i = Math.abs((new Random()).nextInt()%3) + 1;
 		System.out.println("Generated i: " + i);
@@ -97,7 +106,7 @@ public class ServiceController {
 		}
 		System.out.println("Service list created: " + servicesList);
 		return servicesList;
-	}
+	}*/
 	
 	
 	@RequestMapping(value="/service", method = RequestMethod.GET)

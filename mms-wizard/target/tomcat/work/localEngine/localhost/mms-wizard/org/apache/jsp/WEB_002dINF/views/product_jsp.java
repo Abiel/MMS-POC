@@ -85,7 +85,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta content=\"\" name=\"author\">\r\n");
       out.write("    <link href=\"../../docs-assets/ico/favicon.png\" rel=\"shortcut icon\">\r\n");
       out.write("\r\n");
-      out.write("    <title>Signin Template for Bootstrap</title>\r\n");
+      out.write("    <title>Project</title>\r\n");
       out.write("\r\n");
       out.write("    <!-- Bootstrap core CSS -->\r\n");
       out.write("   <link href='");
@@ -332,21 +332,19 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t<div style=\"width: 50%; float: left;\"> \r\n");
           out.write("\t\t\t\t\tProject Name:\r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectName\" autofocus=\"\" required=\"\" placeholder=\"Project Name\" class=\"form-control\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${projectName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("\"> \r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectName\" autofocus=\"\" required=\"\" placeholder=\"Project Name\" class=\"form-control\" value=\"Connected Home At&t\"> \r\n");
           out.write("\t\t\t\t\tClient Name:\r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" name=\"clientName\" autofocus=\"\" required=\"\" placeholder=\"Client Name\" class=\"form-control\">\r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"clientName\" autofocus=\"\" required=\"\" placeholder=\"Client Name\" class=\"form-control\" value=\"At&t\">\r\n");
           out.write("\t\t\t\t\tProject Country:\r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectCountry\" autofocus=\"\" required=\"\" placeholder=\"Project Country\" class=\"form-control\">\r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectCountry\" autofocus=\"\" required=\"\" placeholder=\"Project Country\" class=\"form-control\" value=\"United States\">\r\n");
           out.write("\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t<div style=\"margin-left: 52%; \">\r\n");
           out.write("\t\t\t\t\tProject Description:  \r\n");
-          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectDescription\" autofocus=\"\" required=\"\" placeholder=\"Project Description\" class=\"form-control\">\r\n");
+          out.write("\t\t\t\t\t<input type=\"text\" name=\"projectDescription\" autofocus=\"\" required=\"\" placeholder=\"Project Description\" class=\"form-control\" value=\"Connected home using At&t connectivity\">\r\n");
           out.write("\t\t\t\t\tDelivery Center:<br>\r\n");
           out.write("\t\t\t\t\t<select name=\"deliveryCenter\" required=\"\">\r\n");
-          out.write("\t\t\t\t\t\t  <option value=\"NorthAmerica\" >North America</option>\r\n");
+          out.write("\t\t\t\t\t\t  <option value=\"NorthAmerica\" selected >North America</option>\r\n");
           out.write("\t\t\t\t\t\t  <option value=\"AsiaPacific\">Asia Pacific</option>\r\n");
           out.write("\t\t\t\t\t\t  <option value=\"Europe\">Europe</option>\r\n");
           out.write("\t\t\t\t\t\t  <option value=\"MiddleEastAfrica\">MiddleEast Africa</option>\r\n");
@@ -356,7 +354,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\t<select name=\"sharedModel\">\r\n");
           out.write("\t\t\t\t\t  <option value=\"model1\">model-1</option>\r\n");
           out.write("\t\t\t\t\t  <option value=\"model2\">model-2</option>\r\n");
-          out.write("\t\t\t\t\t  <option value=\"model3\">model-3</option>\r\n");
+          out.write("\t\t\t\t\t  <option value=\"model3\" selected >model-3</option>\r\n");
           out.write("\t\t\t\t\t  <option value=\"model4\">model-4</option>\r\n");
           out.write("\t\t\t\t\t</select>\r\n");
           out.write("\t\t\t\t</div>\r\n");
@@ -376,16 +374,8 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\tFinancial Services:<br>\r\n");
           out.write("\t\t\t\t\t<div class=\"checkbox-list\">\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
-          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> This is checkbox <br />\r\n");
+          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> mWallet <br />\r\n");
+          out.write("\t\t\t\t\t    <input type=\"checkbox\" /> mBanking <br />\r\n");
           out.write("\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\r\n");
@@ -439,9 +429,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t          \r\n");
           out.write("\t\t\t\t            <input type=\"checkbox\" name=\"productList\" value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i.uri}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write('"');
-          out.write('>');
-          out.write(' ');
+          out.write("\" checked=\"true\"> ");
           if (_jspx_meth_c_005fout_005f0(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
           out.write("<br>\r\n");
@@ -474,7 +462,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/views/product.jsp(96,76) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/product.jsp(96,91) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fout_005f0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${i.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f0 = _jspx_th_c_005fout_005f0.doStartTag();
     if (_jspx_th_c_005fout_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

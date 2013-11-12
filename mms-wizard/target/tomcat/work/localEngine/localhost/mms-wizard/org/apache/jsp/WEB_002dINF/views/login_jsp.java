@@ -136,11 +136,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("        </div>\r\n");
-      out.write("        \r\n");
-      out.write("        <!-- ================================ -->\r\n");
-      out.write("        <form class=\"bs-example form-horizontal\" name='f' action=\"organization.htm\" method='POST'>\r\n");
-      out.write("        <input type=\"submit\" >\r\n");
-      out.write("        </form>\r\n");
       out.write("\r\n");
       out.write("\t\t\t<div class=\"row\">\r\n");
       out.write("\t\t\t\t<div class=\"col-sm-5\">\r\n");
@@ -370,7 +365,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f0.setParent(null);
-    // /WEB-INF/views/login.jsp(60,15) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(55,15) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f0.setValue("j_spring_security_check");
     int _jspx_eval_c_005furl_005f0 = _jspx_th_c_005furl_005f0.doStartTag();
     if (_jspx_th_c_005furl_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -389,7 +384,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f0.setParent(null);
-    // /WEB-INF/views/login.jsp(75,10) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(70,10) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${not empty error}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
     if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -420,7 +415,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f5 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f5.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f5.setParent(null);
-    // /WEB-INF/views/login.jsp(93,15) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(88,15) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_spring_005furl_005f5.setValue("/resources/images/mobile.png");
     int[] _jspx_push_body_count_spring_005furl_005f5 = new int[] { 0 };
     try {
@@ -447,7 +442,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f6 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f6.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f6.setParent(null);
-    // /WEB-INF/views/login.jsp(103,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(98,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_spring_005furl_005f6.setValue("/resources/js/jquery.min.js");
     int[] _jspx_push_body_count_spring_005furl_005f6 = new int[] { 0 };
     try {
@@ -474,7 +469,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f7 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f7.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f7.setParent(null);
-    // /WEB-INF/views/login.jsp(104,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(99,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_spring_005furl_005f7.setValue("/resources/css/bootstrap3/js/bootstrap.min.js");
     int[] _jspx_push_body_count_spring_005furl_005f7 = new int[] { 0 };
     try {
@@ -501,7 +496,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_005furl_005f8 = (org.springframework.web.servlet.tags.UrlTag) _005fjspx_005ftagPool_005fspring_005furl_0026_005fvalue_005fnobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_005furl_005f8.setPageContext(_jspx_page_context);
     _jspx_th_spring_005furl_005f8.setParent(null);
-    // /WEB-INF/views/login.jsp(105,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/login.jsp(100,17) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_spring_005furl_005f8.setValue("/resources/js/holder.js");
     int[] _jspx_push_body_count_spring_005furl_005f8 = new int[] { 0 };
     try {

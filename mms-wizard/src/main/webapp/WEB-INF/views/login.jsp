@@ -47,11 +47,6 @@
             </div>
           </div>
         </div>
-        
-        <!-- ================================ -->
-        <form class="bs-example form-horizontal" name='f' action="organization.htm" method='POST'>
-        <input type="submit" >
-        </form>
 
 			<div class="row">
 				<div class="col-sm-5">

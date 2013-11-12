@@ -56,19 +56,19 @@
 				
 				<div style="width: 50%; float: left;"> 
 					Project Name:
-					<input type="text" name="projectName" autofocus="" required="" placeholder="Project Name" class="form-control" value="${projectName}"> 
+					<input type="text" name="projectName" autofocus="" required="" placeholder="Project Name" class="form-control" value="Connected Home At&t"> 
 					Client Name:
-					<input type="text" name="clientName" autofocus="" required="" placeholder="Client Name" class="form-control">
+					<input type="text" name="clientName" autofocus="" required="" placeholder="Client Name" class="form-control" value="At&t">
 					Project Country:
-					<input type="text" name="projectCountry" autofocus="" required="" placeholder="Project Country" class="form-control">
+					<input type="text" name="projectCountry" autofocus="" required="" placeholder="Project Country" class="form-control" value="United States">
 				</div>
 				
 				<div style="margin-left: 52%; ">
 					Project Description:  
-					<input type="text" name="projectDescription" autofocus="" required="" placeholder="Project Description" class="form-control">
+					<input type="text" name="projectDescription" autofocus="" required="" placeholder="Project Description" class="form-control" value="Connected home using At&t connectivity">
 					Delivery Center:<br>
 					<select name="deliveryCenter" required="">
-						  <option value="NorthAmerica" >North America</option>
+						  <option value="NorthAmerica" selected >North America</option>
 						  <option value="AsiaPacific">Asia Pacific</option>
 						  <option value="Europe">Europe</option>
 						  <option value="MiddleEastAfrica">MiddleEast Africa</option>
@@ -78,7 +78,7 @@
 					<select name="sharedModel">
 					  <option value="model1">model-1</option>
 					  <option value="model2">model-2</option>
-					  <option value="model3">model-3</option>
+					  <option value="model3" selected >model-3</option>
 					  <option value="model4">model-4</option>
 					</select>
 				</div>
@@ -93,22 +93,14 @@
 					<div class="checkbox-list">
 					    <c:forEach var="i" varStatus="status" items="${productList}">
 				          
-				            <input type="checkbox" name="productList" value="${i.uri}"> <c:out value="${i.name}" /><br>
+				            <input type="checkbox" name="productList" value="${i.uri}" checked="true"> <c:out value="${i.name}" /><br>
 				          
 				        </c:forEach>
 					</div>
 					Financial Services:<br>
 					<div class="checkbox-list">
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
-					    <input type="checkbox" /> This is checkbox <br />
+					    <input type="checkbox" /> mWallet <br />
+					    <input type="checkbox" /> mBanking <br />
 					</div>
 				</div>
 				

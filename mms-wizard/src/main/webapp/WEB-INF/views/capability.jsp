@@ -54,19 +54,19 @@
 			<div>Project Name: <c:out value="${project.projectName}"/> </div>			
 			<input type="hidden" name="projectName" value="${project.projectName}" >
 			
-			<div style="width: 100%;  border:2px solid; border-radius:25px; padding: 10 10 30 10">
+			<div style="width: 100%; height: 70%;  border:2px solid; border-radius:25px; padding: 10 10 30 10">
 				<div>Below you can find the capabilities that are already included out of the box in the selected domain.<br> Please select from the optional capabilities listed below.</div>
 				
 				<%-- <c:forEach var="product" varStatus="status" items="${project.productList}" > --%>
 					<div style="width: 50%; float: left;"> 
 						<b>Out of the Box Capabilities:</b><br>
-						<div class="checkbox-list">
+						<div class="checkbox-list" style="height: 240px">
 						    <c:forEach var="ob" varStatus="status" items="${product.mandatoryCapabilityList}">
 					            <input type="checkbox" name="mandatoryCapabilityList" checked="checked" value="${ob.uri}" disabled="disabled"> <c:out value="${ob.name}" /><br>
 					        </c:forEach>
 						</div>
 						<b>Optional Capabilities:</b><br>
-						<div class="checkbox-list">
+						<div class="checkbox-list" >
 						     <c:forEach var="ob" varStatus="status" items="${product.optionalCapabilityList}">
 					            <input type="checkbox"  name="optionalCapabilityList" value="${ob.uri}"> <c:out value="${ob.name}" /><br>
 					        </c:forEach>
@@ -74,10 +74,12 @@
 					</div>
 				<%-- </c:forEach> --%>
 				
-				<div style="margin-left: 52%;">
-					
-					<br><br><br><br><br><br><br><br><br>
-					<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>
+				<div style="margin-left: 52%">
+					<div style="height:100%; position:relative">
+						<div style="position:absolute; top:75%; width:100%">
+							<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>
+						</div>
+					</div>
 				</div>
 				<div style=clear: both;"></div>
 			</div>

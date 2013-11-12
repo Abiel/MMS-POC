@@ -55,6 +55,8 @@ public class CapabilityController {
 			//STEP 1. For each product selected, make sparql http call and retrieve capabilities.
 			String capComApiResponse = SparqlClient.getCapabilityComponentAPI();
 			List<Capability> allCapability = toCapabilityList(capComApiResponse);
+			List<Capability> mandatoryCapabilityList = SparqlClient.getMandatoryCapabilities();
+			List<Capability> optionalCapabilityList = SparqlClient.getOptionalCapabilities();
 			System.out.println("SETTING OPTIONAL CAPABILITIES...");
 			//project.getProductList().get(0).setOptionalCapabilityList(allCapability);
 			System.out.println("SETTING MANDATORY CAPABILITIES...");
@@ -62,8 +64,8 @@ public class CapabilityController {
 			
 			//.... may be just for display create a Product instance that has mandatory and optional capabilities...
 			// or should u change the variable in session?
-			project.getProductList().get(0).setMandatoryCapabilityList(allCapability);
-			project.getProductList().get(0).setOptionalCapabilityList(allCapability);
+			project.getProductList().get(0).setMandatoryCapabilityList(mandatoryCapabilityList);
+			project.getProductList().get(0).setOptionalCapabilityList(optionalCapabilityList);
 			/*model.addAttribute("mandatoryCapabilityList", allCapability); //JUST FOR DISPLAY. In ServiceController this comes as null. coz it's inactive.
 			model.addAttribute("optionalCapabilityList", allCapability);*/
 			HttpSession session = request.getSession();
@@ -80,6 +82,8 @@ public class CapabilityController {
 	public String component_get(ModelMap model) {
 		return "capability";
 	}
+
+	
 
 	private List<Capability> toCapabilityList(String capabilityList)
 			throws JSONException {

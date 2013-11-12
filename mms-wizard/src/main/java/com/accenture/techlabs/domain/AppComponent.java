@@ -17,7 +17,10 @@ public class AppComponent {
 	public AppComponent() {
 	}
 	
-	
+	public AppComponent(String uri) {
+		this.uri = uri;
+	}
+
 
 	public String getUri() {
 		return uri;

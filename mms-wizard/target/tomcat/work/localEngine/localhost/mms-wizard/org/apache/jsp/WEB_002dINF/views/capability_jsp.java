@@ -85,7 +85,7 @@ public final class capability_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta content=\"\" name=\"author\">\r\n");
       out.write("    <link href=\"../../docs-assets/ico/favicon.png\" rel=\"shortcut icon\">\r\n");
       out.write("\r\n");
-      out.write("    <title>Signin Template for Bootstrap</title>\r\n");
+      out.write("    <title>Capability</title>\r\n");
       out.write("\r\n");
       out.write("    <!-- Bootstrap core CSS -->\r\n");
       out.write("   <link href='");
@@ -334,21 +334,21 @@ public final class capability_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${project.projectName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("\" >\r\n");
           out.write("\t\t\t\r\n");
-          out.write("\t\t\t<div style=\"width: 100%;  border:2px solid; border-radius:25px; padding: 10 10 30 10\">\r\n");
+          out.write("\t\t\t<div style=\"width: 100%; height: 70%;  border:2px solid; border-radius:25px; padding: 10 10 30 10\">\r\n");
           out.write("\t\t\t\t<div>Below you can find the capabilities that are already included out of the box in the selected domain.<br> Please select from the optional capabilities listed below.</div>\r\n");
           out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t");
           out.write("\r\n");
           out.write("\t\t\t\t\t<div style=\"width: 50%; float: left;\"> \r\n");
           out.write("\t\t\t\t\t\t<b>Out of the Box Capabilities:</b><br>\r\n");
-          out.write("\t\t\t\t\t\t<div class=\"checkbox-list\">\r\n");
+          out.write("\t\t\t\t\t\t<div class=\"checkbox-list\" style=\"height: 240px\">\r\n");
           out.write("\t\t\t\t\t\t    ");
           if (_jspx_meth_c_005fforEach_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
           out.write("\r\n");
           out.write("\t\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\t\t<b>Optional Capabilities:</b><br>\r\n");
-          out.write("\t\t\t\t\t\t<div class=\"checkbox-list\">\r\n");
+          out.write("\t\t\t\t\t\t<div class=\"checkbox-list\" >\r\n");
           out.write("\t\t\t\t\t\t     ");
           if (_jspx_meth_c_005fforEach_005f1(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
@@ -358,10 +358,12 @@ public final class capability_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t");
           out.write("\r\n");
           out.write("\t\t\t\t\r\n");
-          out.write("\t\t\t\t<div style=\"margin-left: 52%;\">\r\n");
-          out.write("\t\t\t\t\t\r\n");
-          out.write("\t\t\t\t\t<br><br><br><br><br><br><br><br><br>\r\n");
-          out.write("\t\t\t\t\t<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Next Step</button>\r\n");
+          out.write("\t\t\t\t<div style=\"margin-left: 52%\">\r\n");
+          out.write("\t\t\t\t\t<div style=\"height:100%; position:relative\">\r\n");
+          out.write("\t\t\t\t\t\t<div style=\"position:absolute; top:75%; width:100%\">\r\n");
+          out.write("\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Next Step</button>\r\n");
+          out.write("\t\t\t\t\t\t</div>\r\n");
+          out.write("\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t<div style=clear: both;\"></div>\r\n");
           out.write("\t\t\t</div>\r\n");
