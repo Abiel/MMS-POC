@@ -70,6 +70,7 @@ public class CapabilityController {
 			model.addAttribute("optionalCapabilityList", allCapability);*/
 			HttpSession session = request.getSession();
 			session.setAttribute("project", project);
+			session.setAttribute("productName", project.getProductList().get(0).getUri());
 			model.addAttribute("product", project.getProductList().get(0));
 			
 		} catch (JSONException e) {

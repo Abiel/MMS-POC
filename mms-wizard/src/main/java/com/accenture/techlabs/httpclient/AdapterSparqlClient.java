@@ -14,6 +14,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 import com.accenture.techlabs.constants.Constants;
+import com.accenture.techlabs.domain.Adapter;
 import com.accenture.techlabs.domain.AppComponent;
 import com.accenture.techlabs.domain.Capability;
 import com.accenture.techlabs.domain.Product;
@@ -23,15 +24,16 @@ import com.accenture.techlabs.domain.Service;
  * @author abiel.m.woldu
  *
  */
-public class AppComponentSparqlClient {
+public class AdapterSparqlClient {
 
-	public AppComponentSparqlClient() {
+	public AdapterSparqlClient() {
 	}
 	
-	public static Product getAppComponentsForAllServices(Product product){
+	public static Product getAdaptersForAllServices(Product product){
 		try {
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~Adapter data population~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			//STEP 1. get all components from SPARQL API.
-			String allComponents = queryGetAllAppComponents();
+			String allComponents = queryGetAllAdapters();
 			
 			//STEP 2. Populate components List to services under mandatory capabilities.
 			//services from mandatory capabilities
@@ -39,9 +41,8 @@ public class AppComponentSparqlClient {
 			if(mandatoryCapabilities != null){
 				for(Capability c: mandatoryCapabilities){
 					processJSON(allComponents, c.getServiceList());
-					c.setName(getName(c.getUri()));
 				}
-			}	
+			}
 			
 			//STEP 3. Populate components List to services under optional capabilities.
 			//services from optional capabilities
@@ -49,7 +50,6 @@ public class AppComponentSparqlClient {
 			if(optionalCapabilities != null){
 				for(Capability c: optionalCapabilities){
 					processJSON(allComponents, c.getServiceList());
-					c.setName(getName(c.getUri()));
 				}
 			}
 		} catch (JSONException e) {
@@ -58,8 +58,8 @@ public class AppComponentSparqlClient {
 		return product;
 	}
 	
-	public static String queryGetAllAppComponents(){
-		WebClient client = WebClient.create(Constants.URIs.APP_COMPONENT_API);
+	public static String queryGetAllAdapters(){
+		WebClient client = WebClient.create(Constants.URIs.ADAPTER_API);
 		client.accept(MediaType.APPLICATION_JSON);
 		String r = client.get(String.class);
 		//Response response = client.get();       								//Another way to query.
@@ -79,32 +79,30 @@ public class AppComponentSparqlClient {
 						JSONObject current = bindings.getJSONObject(i);
 						String service = null;
 						if(current.has("service")){
-							JSONObject subcapability = current.getJSONObject("service");
-							if(subcapability.has("value")){
-								service = subcapability.getString("value");
+							JSONObject serviceName = current.getJSONObject("service");
+							if(serviceName.has("value")){
+								service = serviceName.getString("value");
 							}
 						}
+						//only fetch Adapter from JSON if service matches...
 						if(s.getUri().equals(service)){
-							AppComponent appComponent = new AppComponent();
-							//only fetch componentName if service matches...
-							String componentName = null;
-							if(current.has("component")){
-								JSONObject component = current.getJSONObject("component");
-								if(component.has("value")){
-									componentName = component.getString("value");
+							Adapter newAdapter = new Adapter();
+							String adapterName = null;
+							if(current.has("adapter")){
+								JSONObject adapter = current.getJSONObject("adapter");
+								if(adapter.has("value")){
+									adapterName = adapter.getString("value");
 									System.out.println("[[service]]:" + s.getUri());
-									System.out.println("\t\t[[component]]:" + componentName);
+									System.out.println("\t\t[[adapter]]:" + adapterName);
 								}
 							}
-							appComponent.setUri(componentName);
-							appComponent.setName(getName(componentName));
-							if(s.getAppComponentList()==null)
-								s.setAppComponentList(new ArrayList<AppComponent>());    //if component list was null then initialize it, else add it.
-							s.getAppComponentList().add(appComponent);
+							newAdapter.setUri(adapterName);
+							newAdapter.setName(getName(adapterName));
+							if(s.getAdapterList()==null)
+								s.setAdapterList(new ArrayList<Adapter>());    //if Adapter list was null then initialize it, else add it.
+							s.getAdapterList().add(newAdapter);
 						}
 					}
-					//Just for display populate the service name here:
-					s.setName(getName(s.getUri()));
 				}
 			}
 		}

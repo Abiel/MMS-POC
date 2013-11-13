@@ -51,7 +51,7 @@
 <div class="container">
 		<form:form class="form-signin" name='f' action="service.htm" method='POST' command="product">
 			<h2 class="form-signin-heading" >Create New Project (Step-2)</h2>
-			<div>Project Name: <c:out value="${project.projectName}"/> </div>			
+			<div><b>Project Name: <u><c:out value="${project.projectName}"/> </u></b></div>			
 			<input type="hidden" name="projectName" value="${project.projectName}" >
 			
 			<div style="width: 100%; height: 70%;  border:2px solid; border-radius:25px; padding: 10 10 30 10">

@@ -51,21 +51,21 @@
 		<div class="container">
 				<form:form class="form-signin" name='f' action="persistence.htm" method='POST' commandName="product">
 					<h2 class="form-signin-heading" >Create New Project (Step-4)</h2>
-					<div>Project Name: <c:out value="${projectName}" /> </div>			
+					<div><b>Project Name: <u><c:out value="${projectName}" /> </u></b></div>			
 					
 					<div style="width: 100%; height:102%; border:2px solid; border-radius:25px; padding: 10 10 30 10">
 						<div>Below you can find the app components and adapters associated to services<br> 
 						Please select the App Components and Adapters you want.</div>
 						<div style="width: 50%; float: left;"> 
 							
-							Out of box capabilities:
+							<b>Out of box capabilities:</b>
 							<div class="service-list">
 								<c:forEach var="capability" varStatus="statusCapability" items="${product.mandatoryCapabilityList}">
-										<b>Capability:<c:out value="${capability.uri}" /></b><br>
+										<b>Capability:<c:out value="${capability.name}" /></b><br>
 										
 									        	<form:hidden path="mandatoryCapabilityList[${statusCapability.index}].uri" value="${capability.uri}" />
 										        <c:forEach var="service" varStatus="statusService" items="${capability.serviceList}">
-										        	<b>Services:<c:out value="${service.uri}" /></b><br>
+										        	<b>Services:<c:out value="${service.name}" /></b><br>
 											        	<b>App Components</b>
 											        	<div class="checkbox-list">
 											        	
@@ -74,18 +74,26 @@
 										            		<form:checkbox path="mandatoryCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].appComponentList" value="${appComponent.uri}" /> <c:out value="${appComponent.name}" /><br>
 										        		</c:forEach>
 										        		</div>
+										        		
+										        		<b>Adapters</b>
+											        	<div class="checkbox-list">
+											        	
+											        	<c:forEach var="adapter" varStatus="statusAdapter" items="${service.adapterList}">
+										            		<form:checkbox path="mandatoryCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].adapterList" value="${adapter.uri}" /> <c:out value="${adapter.name}" /><br>
+										        		</c:forEach>
+										        		</div>
 									        	</c:forEach>
 										
 						        </c:forEach>
 							</div>
-							Optional capabilities:
+							<b>Optional capabilities:</b>
 							<div class="service-list">
 								<c:forEach var="capability" varStatus="statusCapability" items="${product.optionalCapabilityList}">
-										<b>Capability:<c:out value="${capability.uri}" /></b><br>
+										<b>Capability:<c:out value="${capability.name}" /></b><br>
 										
 									        	<form:hidden path="optionalCapabilityList[${statusCapability.index}].uri" value="${capability.uri}" />
 										        <c:forEach var="service" varStatus="statusService" items="${capability.serviceList}">
-										        	<b>Services:<c:out value="${service.uri}" /></b><br>
+										        	<b>Services:<c:out value="${service.name}" /></b><br>
 											        	<b>App Components</b>
 											        	<div class="checkbox-list">
 											        	
@@ -94,14 +102,26 @@
 										            		<form:checkbox path="optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].appComponentList" value="${appComponent.uri}" /> <c:out value="${appComponent.name}" /><br>
 										        		</c:forEach>
 										        		</div>
+										        		
+										        		<b>Adapters</b>
+											        	<div class="checkbox-list">
+											        	
+											        	<c:forEach var="adapter" varStatus="statusAdapter" items="${service.adapterList}">
+										            		<form:checkbox path="optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].adapterList" value="${adapter.uri}" /> <c:out value="${adapter.name}" /><br>
+										        		</c:forEach>
+										        		</div>
 									        	</c:forEach>
 										
 						        </c:forEach>
 							</div>
 							
 						</div>
-						<div style="margin-left: 52%; height:100%;">
-							<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>
+						<div style="margin-left: 52%">
+							<div style="height:100%; position:relative">
+								<div style="position:absolute; top:85%; width:100%">
+									<button type="submit" class="btn btn-lg btn-primary btn-block">Finish</button>
+								</div>
+							</div>
 						</div>
 						<div style=clear: both;"></div>
 					</div>

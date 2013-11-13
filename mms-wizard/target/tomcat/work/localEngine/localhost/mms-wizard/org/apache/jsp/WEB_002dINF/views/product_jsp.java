@@ -327,7 +327,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\r\n");
           out.write("\t\t\t<h2 class=\"form-signin-heading\" >Create New Project (Step-1)</h2>\r\n");
-          out.write("\t\t\t<div>Insert Project Details.</div>\r\n");
+          out.write("\t\t\t<div><b>Project Details.</b></div>\r\n");
           out.write("\t\t\t<div style=\"width: 100%; border:2px solid; border-radius:25px; padding: 10 10 10 10\">\r\n");
           out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t<div style=\"width: 50%; float: left;\"> \r\n");

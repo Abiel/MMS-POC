@@ -51,42 +51,50 @@
 <div class="container">
 		<form:form class="form-signin" name='f' action="appcomponent.htm" method='POST' commandName="product">
 			<h2 class="form-signin-heading" >Create New Project (Step-3)</h2>
-			<div>Project Name: <c:out value="${projectName}" /> </div>			
+			<div><b>Project Name: <u><c:out value="${projectName}" /> </u></b></div>			
 			
 			<div style="width: 100%; height:102%; border:2px solid; border-radius:25px; padding: 10 10 30 10">
 				<div>Below you can find the services associated to <br> Please select from the optional capabilities listed below.</div>
 				<div style="width: 50%; float: left;"> 
 					
-					Out of box capabilities:
+					<b>Out of box capabilities:</b>
 					<div class="service-list">
 						<c:forEach var="capability" varStatus="statusCapability" items="${product.mandatoryCapabilityList}">
 							<b>Capability:<c:out value="${capability.name}" /></b><br>
-							<b>Services:</b><br>
-							<div class="checkbox-list">
-					        	<form:hidden path="mandatoryCapabilityList[${statusCapability.index}].uri" value="${capability.uri}" />
-						        <c:forEach var="service" varStatus="statusService" items="${capability.serviceList}">
-					            	<form:checkbox path="mandatoryCapabilityList[${statusCapability.index}].serviceList" value="${service.uri}" /> <c:out value="${service.name}" /><br>
-					        	</c:forEach>
+							<div style="padding-left:3%">
+								<b>Services:</b><br>
+								<div class="checkbox-list">
+						        	<form:hidden path="mandatoryCapabilityList[${statusCapability.index}].uri" value="${capability.uri}" />
+							        <c:forEach var="service" varStatus="statusService" items="${capability.serviceList}">
+						            	<form:checkbox path="mandatoryCapabilityList[${statusCapability.index}].serviceList" value="${service.uri}" /> <c:out value="${service.name}" /><br>
+						        	</c:forEach>
+								</div>
 							</div>
 				        </c:forEach>
 					</div>
-					Optional capabilities:
+					<b>Optional capabilities:</b>
 					<div class="service-list">
 					    <c:forEach var="optionalCapability" varStatus="statusCapability" items="${product.optionalCapabilityList}">
 							<b>Capability:<c:out value="${optionalCapability.name}" /></b><br>
-							<b>Services:</b><br>
-							<div class="checkbox-list">
-								<form:hidden path="optionalCapabilityList[${statusCapability.index}].uri" value="${optionalCapability.uri}" />
-						        <c:forEach var="service" varStatus="statusService" items="${optionalCapability.serviceList}">
-					            	<form:checkbox path="optionalCapabilityList[${statusCapability.index}].serviceList" value="${service.uri}" /> <c:out value="${service.name}" /><br>
-					        	</c:forEach>
+							<div style="padding-left:3%">
+								<b>Services:</b><br>
+								<div class="checkbox-list">
+									<form:hidden path="optionalCapabilityList[${statusCapability.index}].uri" value="${optionalCapability.uri}" />
+							        <c:forEach var="service" varStatus="statusService" items="${optionalCapability.serviceList}">
+						            	<form:checkbox path="optionalCapabilityList[${statusCapability.index}].serviceList" value="${service.uri}" /> <c:out value="${service.name}" /><br>
+						        	</c:forEach>
+								</div>
 							</div>
 				        </c:forEach>
 					</div>
 					
 				</div>
-				<div style="margin-left: 52%; height:100%;">
-					<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>
+				<div style="margin-left: 52%">
+					<div style="height:100%; position:relative">
+						<div style="position:absolute; top:85%; width:100%">
+							<button type="submit" class="btn btn-lg btn-primary btn-block">Next Step</button>
+						</div>
+					</div>
 				</div>
 				<div style=clear: both;"></div>
 			</div>

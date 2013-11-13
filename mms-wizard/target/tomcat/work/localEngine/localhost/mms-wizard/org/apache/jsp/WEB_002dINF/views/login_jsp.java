@@ -185,7 +185,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t</div>\r\n");
-      out.write("\t\t\t<br><br><br><br>\r\n");
+      out.write("\t\t\t<br><br><br><br><br><br><br><br>\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t<!-- Bootstrap core JavaScript\r\n");
       out.write("    ================================================== -->\r\n");

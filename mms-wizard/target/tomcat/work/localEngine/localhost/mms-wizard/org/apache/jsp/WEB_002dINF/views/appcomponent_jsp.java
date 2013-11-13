@@ -332,34 +332,38 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
         do {
           out.write("\r\n");
           out.write("\t\t\t\t\t<h2 class=\"form-signin-heading\" >Create New Project (Step-4)</h2>\r\n");
-          out.write("\t\t\t\t\t<div>Project Name: ");
+          out.write("\t\t\t\t\t<div><b>Project Name: <u>");
           if (_jspx_meth_c_005fout_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
-          out.write(" </div>\t\t\t\r\n");
+          out.write(" </u></b></div>\t\t\t\r\n");
           out.write("\t\t\t\t\t\r\n");
           out.write("\t\t\t\t\t<div style=\"width: 100%; height:102%; border:2px solid; border-radius:25px; padding: 10 10 30 10\">\r\n");
           out.write("\t\t\t\t\t\t<div>Below you can find the app components and adapters associated to services<br> \r\n");
           out.write("\t\t\t\t\t\tPlease select the App Components and Adapters you want.</div>\r\n");
           out.write("\t\t\t\t\t\t<div style=\"width: 50%; float: left;\"> \r\n");
           out.write("\t\t\t\t\t\t\t\r\n");
-          out.write("\t\t\t\t\t\t\tOut of box capabilities:\r\n");
+          out.write("\t\t\t\t\t\t\t<b>Out of box capabilities:</b>\r\n");
           out.write("\t\t\t\t\t\t\t<div class=\"service-list\">\r\n");
           out.write("\t\t\t\t\t\t\t\t");
           if (_jspx_meth_c_005fforEach_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
           out.write("\r\n");
           out.write("\t\t\t\t\t\t\t</div>\r\n");
-          out.write("\t\t\t\t\t\t\tOptional capabilities:\r\n");
+          out.write("\t\t\t\t\t\t\t<b>Optional capabilities:</b>\r\n");
           out.write("\t\t\t\t\t\t\t<div class=\"service-list\">\r\n");
           out.write("\t\t\t\t\t\t\t\t");
-          if (_jspx_meth_c_005fforEach_005f3(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
+          if (_jspx_meth_c_005fforEach_005f4(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
           out.write("\r\n");
           out.write("\t\t\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\t\t\t\r\n");
           out.write("\t\t\t\t\t\t</div>\r\n");
-          out.write("\t\t\t\t\t\t<div style=\"margin-left: 52%; height:100%;\">\r\n");
-          out.write("\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Next Step</button>\r\n");
+          out.write("\t\t\t\t\t\t<div style=\"margin-left: 52%\">\r\n");
+          out.write("\t\t\t\t\t\t\t<div style=\"height:100%; position:relative\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t<div style=\"position:absolute; top:85%; width:100%\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Finish</button>\r\n");
+          out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+          out.write("\t\t\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\t\t<div style=clear: both;\"></div>\r\n");
           out.write("\t\t\t\t\t</div>\r\n");
@@ -391,7 +395,7 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/appcomponent.jsp(54,24) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/appcomponent.jsp(54,30) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fout_005f0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${projectName}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f0 = _jspx_th_c_005fout_005f0.doStartTag();
     if (_jspx_th_c_005fout_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -465,7 +469,7 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     _jspx_th_c_005fout_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
     // /WEB-INF/views/appcomponent.jsp(64,24) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fout_005f1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    _jspx_th_c_005fout_005f1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f1 = _jspx_th_c_005fout_005f1.doStartTag();
     if (_jspx_th_c_005fout_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f1);
@@ -540,6 +544,15 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
             return true;
           out.write("\r\n");
           out.write("\t\t\t\t\t\t\t\t\t\t        \t\t</div>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t<b>Adapters</b>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t<div class=\"checkbox-list\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t");
+          if (_jspx_meth_c_005fforEach_005f3(_jspx_th_c_005fforEach_005f1, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f1))
+            return true;
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t</div>\r\n");
           out.write("\t\t\t\t\t\t\t\t\t        \t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -569,7 +582,7 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     _jspx_th_c_005fout_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f1);
     // /WEB-INF/views/appcomponent.jsp(68,31) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fout_005f2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    _jspx_th_c_005fout_005f2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f2 = _jspx_th_c_005fout_005f2.doStartTag();
     if (_jspx_th_c_005fout_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f2);
@@ -703,41 +716,34 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     return false;
   }
 
-  private boolean _jspx_meth_c_005fforEach_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_form_005fform_005f0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_005fform_005f0)
+  private boolean _jspx_meth_c_005fforEach_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f1)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f3 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f3.setPageContext(_jspx_page_context);
-    _jspx_th_c_005fforEach_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/appcomponent.jsp(83,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f3.setVar("capability");
-    // /WEB-INF/views/appcomponent.jsp(83,8) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f3.setVarStatus("statusCapability");
-    // /WEB-INF/views/appcomponent.jsp(83,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${product.optionalCapabilityList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    _jspx_th_c_005fforEach_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f1);
+    // /WEB-INF/views/appcomponent.jsp(81,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f3.setVar("adapter");
+    // /WEB-INF/views/appcomponent.jsp(81,20) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f3.setVarStatus("statusAdapter");
+    // /WEB-INF/views/appcomponent.jsp(81,20) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.adapterList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f3 = new int[] { 0 };
     try {
       int _jspx_eval_c_005fforEach_005f3 = _jspx_th_c_005fforEach_005f3.doStartTag();
       if (_jspx_eval_c_005fforEach_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t<b>Capability:");
+          out.write("\t\t\t\t\t\t\t\t\t\t            \t\t");
+          if (_jspx_meth_form_005fcheckbox_005f1(_jspx_th_c_005fforEach_005f3, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f3))
+            return true;
+          out.write(' ');
           if (_jspx_meth_c_005fout_005f4(_jspx_th_c_005fforEach_005f3, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f3))
             return true;
-          out.write("</b><br>\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t        \t");
-          if (_jspx_meth_form_005fhidden_005f2(_jspx_th_c_005fforEach_005f3, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f3))
-            return true;
-          out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t        ");
-          if (_jspx_meth_c_005fforEach_005f4(_jspx_th_c_005fforEach_005f3, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f3))
-            return true;
-          out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
-          out.write("\t\t\t\t\t\t        ");
+          out.write("<br>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f3.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -757,6 +763,35 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     return false;
   }
 
+  private boolean _jspx_meth_form_005fcheckbox_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f3, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f3)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:checkbox
+    org.springframework.web.servlet.tags.form.CheckboxTag _jspx_th_form_005fcheckbox_005f1 = (org.springframework.web.servlet.tags.form.CheckboxTag) _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.CheckboxTag.class);
+    _jspx_th_form_005fcheckbox_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fcheckbox_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f3);
+    // /WEB-INF/views/appcomponent.jsp(82,24) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f1.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("mandatoryCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].adapterList", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(82,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${adapter.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fcheckbox_005f1 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fcheckbox_005f1 = _jspx_th_form_005fcheckbox_005f1.doStartTag();
+      if (_jspx_th_form_005fcheckbox_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fcheckbox_005f1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fcheckbox_005f1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fcheckbox_005f1.doFinally();
+      _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fcheckbox_005f1);
+    }
+    return false;
+  }
+
   private boolean _jspx_meth_c_005fout_005f4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f3, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f3)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -765,8 +800,8 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f4 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f4.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f3);
-    // /WEB-INF/views/appcomponent.jsp(84,24) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fout_005f4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(82,171) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fout_005f4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${adapter.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f4 = _jspx_th_c_005fout_005f4.doStartTag();
     if (_jspx_th_c_005fout_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f4);
@@ -776,72 +811,41 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     return false;
   }
 
-  private boolean _jspx_meth_form_005fhidden_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f3, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f3)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  form:hidden
-    org.springframework.web.servlet.tags.form.HiddenInputTag _jspx_th_form_005fhidden_005f2 = (org.springframework.web.servlet.tags.form.HiddenInputTag) _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.HiddenInputTag.class);
-    _jspx_th_form_005fhidden_005f2.setPageContext(_jspx_page_context);
-    _jspx_th_form_005fhidden_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f3);
-    // /WEB-INF/views/appcomponent.jsp(86,18) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_form_005fhidden_005f2.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].uri", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-    // /WEB-INF/views/appcomponent.jsp(86,18) null
-    _jspx_th_form_005fhidden_005f2.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
-    int[] _jspx_push_body_count_form_005fhidden_005f2 = new int[] { 0 };
-    try {
-      int _jspx_eval_form_005fhidden_005f2 = _jspx_th_form_005fhidden_005f2.doStartTag();
-      if (_jspx_th_form_005fhidden_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_form_005fhidden_005f2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_form_005fhidden_005f2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_form_005fhidden_005f2.doFinally();
-      _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fhidden_005f2);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_005fforEach_005f4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f3, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f3)
+  private boolean _jspx_meth_c_005fforEach_005f4(javax.servlet.jsp.tagext.JspTag _jspx_th_form_005fform_005f0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_005fform_005f0)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f4 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f4.setPageContext(_jspx_page_context);
-    _jspx_th_c_005fforEach_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f3);
-    // /WEB-INF/views/appcomponent.jsp(87,18) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f4.setVar("service");
-    // /WEB-INF/views/appcomponent.jsp(87,18) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f4.setVarStatus("statusService");
-    // /WEB-INF/views/appcomponent.jsp(87,18) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f4.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.serviceList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    _jspx_th_c_005fforEach_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
+    // /WEB-INF/views/appcomponent.jsp(91,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f4.setVar("capability");
+    // /WEB-INF/views/appcomponent.jsp(91,8) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f4.setVarStatus("statusCapability");
+    // /WEB-INF/views/appcomponent.jsp(91,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f4.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${product.optionalCapabilityList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f4 = new int[] { 0 };
     try {
       int _jspx_eval_c_005fforEach_005f4 = _jspx_th_c_005fforEach_005f4.doStartTag();
       if (_jspx_eval_c_005fforEach_005f4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t        \t<b>Services:");
+          out.write("\t\t\t\t\t\t\t\t\t\t<b>Capability:");
           if (_jspx_meth_c_005fout_005f5(_jspx_th_c_005fforEach_005f4, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f4))
             return true;
           out.write("</b><br>\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t<b>App Components</b>\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t<div class=\"checkbox-list\">\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t");
-          if (_jspx_meth_form_005fhidden_005f3(_jspx_th_c_005fforEach_005f4, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f4))
+          out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t        \t");
+          if (_jspx_meth_form_005fhidden_005f2(_jspx_th_c_005fforEach_005f4, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f4))
             return true;
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t");
+          out.write("\t\t\t\t\t\t\t\t\t\t        ");
           if (_jspx_meth_c_005fforEach_005f5(_jspx_th_c_005fforEach_005f4, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f4))
             return true;
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t</div>\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t        \t");
+          out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
+          out.write("\t\t\t\t\t\t        ");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f4.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -869,8 +873,8 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f5 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f5.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f4);
-    // /WEB-INF/views/appcomponent.jsp(88,31) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fout_005f5.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(92,24) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fout_005f5.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f5 = _jspx_th_c_005fout_005f5.doStartTag();
     if (_jspx_th_c_005fout_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f5);
@@ -880,31 +884,31 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     return false;
   }
 
-  private boolean _jspx_meth_form_005fhidden_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f4)
+  private boolean _jspx_meth_form_005fhidden_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f4)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  form:hidden
-    org.springframework.web.servlet.tags.form.HiddenInputTag _jspx_th_form_005fhidden_005f3 = (org.springframework.web.servlet.tags.form.HiddenInputTag) _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.HiddenInputTag.class);
-    _jspx_th_form_005fhidden_005f3.setPageContext(_jspx_page_context);
-    _jspx_th_form_005fhidden_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f4);
-    // /WEB-INF/views/appcomponent.jsp(92,20) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_form_005fhidden_005f3.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].uri", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-    // /WEB-INF/views/appcomponent.jsp(92,20) null
-    _jspx_th_form_005fhidden_005f3.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
-    int[] _jspx_push_body_count_form_005fhidden_005f3 = new int[] { 0 };
+    org.springframework.web.servlet.tags.form.HiddenInputTag _jspx_th_form_005fhidden_005f2 = (org.springframework.web.servlet.tags.form.HiddenInputTag) _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.HiddenInputTag.class);
+    _jspx_th_form_005fhidden_005f2.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fhidden_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f4);
+    // /WEB-INF/views/appcomponent.jsp(94,18) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fhidden_005f2.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].uri", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(94,18) null
+    _jspx_th_form_005fhidden_005f2.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fhidden_005f2 = new int[] { 0 };
     try {
-      int _jspx_eval_form_005fhidden_005f3 = _jspx_th_form_005fhidden_005f3.doStartTag();
-      if (_jspx_th_form_005fhidden_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      int _jspx_eval_form_005fhidden_005f2 = _jspx_th_form_005fhidden_005f2.doStartTag();
+      if (_jspx_th_form_005fhidden_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
     } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_form_005fhidden_005f3[0]-- > 0)
+      while (_jspx_push_body_count_form_005fhidden_005f2[0]-- > 0)
         out = _jspx_page_context.popBody();
-      _jspx_th_form_005fhidden_005f3.doCatch(_jspx_exception);
+      _jspx_th_form_005fhidden_005f2.doCatch(_jspx_exception);
     } finally {
-      _jspx_th_form_005fhidden_005f3.doFinally();
-      _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fhidden_005f3);
+      _jspx_th_form_005fhidden_005f2.doFinally();
+      _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fhidden_005f2);
     }
     return false;
   }
@@ -917,26 +921,44 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f5 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f5.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f4);
-    // /WEB-INF/views/appcomponent.jsp(93,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f5.setVar("appComponent");
-    // /WEB-INF/views/appcomponent.jsp(93,20) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f5.setVarStatus("statusAppComponent");
-    // /WEB-INF/views/appcomponent.jsp(93,20) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f5.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.appComponentList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(95,18) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f5.setVar("service");
+    // /WEB-INF/views/appcomponent.jsp(95,18) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f5.setVarStatus("statusService");
+    // /WEB-INF/views/appcomponent.jsp(95,18) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f5.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${capability.serviceList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f5 = new int[] { 0 };
     try {
       int _jspx_eval_c_005fforEach_005f5 = _jspx_th_c_005fforEach_005f5.doStartTag();
       if (_jspx_eval_c_005fforEach_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t            \t\t");
-          if (_jspx_meth_form_005fcheckbox_005f1(_jspx_th_c_005fforEach_005f5, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f5))
-            return true;
-          out.write(' ');
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t<b>Services:");
           if (_jspx_meth_c_005fout_005f6(_jspx_th_c_005fforEach_005f5, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f5))
             return true;
-          out.write("<br>\r\n");
-          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t");
+          out.write("</b><br>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t<b>App Components</b>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t<div class=\"checkbox-list\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t");
+          if (_jspx_meth_form_005fhidden_005f3(_jspx_th_c_005fforEach_005f5, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f5))
+            return true;
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t");
+          if (_jspx_meth_c_005fforEach_005f6(_jspx_th_c_005fforEach_005f5, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f5))
+            return true;
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t</div>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t<b>Adapters</b>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t<div class=\"checkbox-list\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t\t        \t");
+          if (_jspx_meth_c_005fforEach_005f7(_jspx_th_c_005fforEach_005f5, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f5))
+            return true;
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t</div>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t        \t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f5.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -956,35 +978,6 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     return false;
   }
 
-  private boolean _jspx_meth_form_005fcheckbox_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f5, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f5)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  form:checkbox
-    org.springframework.web.servlet.tags.form.CheckboxTag _jspx_th_form_005fcheckbox_005f1 = (org.springframework.web.servlet.tags.form.CheckboxTag) _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.CheckboxTag.class);
-    _jspx_th_form_005fcheckbox_005f1.setPageContext(_jspx_page_context);
-    _jspx_th_form_005fcheckbox_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f5);
-    // /WEB-INF/views/appcomponent.jsp(94,24) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_form_005fcheckbox_005f1.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].appComponentList", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-    // /WEB-INF/views/appcomponent.jsp(94,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_form_005fcheckbox_005f1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${appComponent.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
-    int[] _jspx_push_body_count_form_005fcheckbox_005f1 = new int[] { 0 };
-    try {
-      int _jspx_eval_form_005fcheckbox_005f1 = _jspx_th_form_005fcheckbox_005f1.doStartTag();
-      if (_jspx_th_form_005fcheckbox_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_form_005fcheckbox_005f1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_form_005fcheckbox_005f1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_form_005fcheckbox_005f1.doFinally();
-      _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fcheckbox_005f1);
-    }
-    return false;
-  }
-
   private boolean _jspx_meth_c_005fout_005f6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f5, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f5)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -993,14 +986,233 @@ public final class appcomponent_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f6 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_005fout_005f6.setPageContext(_jspx_page_context);
     _jspx_th_c_005fout_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f5);
-    // /WEB-INF/views/appcomponent.jsp(94,180) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fout_005f6.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${appComponent.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(96,31) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fout_005f6.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_c_005fout_005f6 = _jspx_th_c_005fout_005f6.doStartTag();
     if (_jspx_th_c_005fout_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f6);
       return true;
     }
     _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f6);
+    return false;
+  }
+
+  private boolean _jspx_meth_form_005fhidden_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f5, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f5)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:hidden
+    org.springframework.web.servlet.tags.form.HiddenInputTag _jspx_th_form_005fhidden_005f3 = (org.springframework.web.servlet.tags.form.HiddenInputTag) _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.HiddenInputTag.class);
+    _jspx_th_form_005fhidden_005f3.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fhidden_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f5);
+    // /WEB-INF/views/appcomponent.jsp(100,20) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fhidden_005f3.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].uri", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(100,20) null
+    _jspx_th_form_005fhidden_005f3.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fhidden_005f3 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fhidden_005f3 = _jspx_th_form_005fhidden_005f3.doStartTag();
+      if (_jspx_th_form_005fhidden_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fhidden_005f3[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fhidden_005f3.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fhidden_005f3.doFinally();
+      _005fjspx_005ftagPool_005fform_005fhidden_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fhidden_005f3);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fforEach_005f6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f5, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f5)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f6 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_005fforEach_005f6.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fforEach_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f5);
+    // /WEB-INF/views/appcomponent.jsp(101,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f6.setVar("appComponent");
+    // /WEB-INF/views/appcomponent.jsp(101,20) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f6.setVarStatus("statusAppComponent");
+    // /WEB-INF/views/appcomponent.jsp(101,20) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f6.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.appComponentList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_c_005fforEach_005f6 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_005fforEach_005f6 = _jspx_th_c_005fforEach_005f6.doStartTag();
+      if (_jspx_eval_c_005fforEach_005f6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t            \t\t");
+          if (_jspx_meth_form_005fcheckbox_005f2(_jspx_th_c_005fforEach_005f6, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f6))
+            return true;
+          out.write(' ');
+          if (_jspx_meth_c_005fout_005f7(_jspx_th_c_005fforEach_005f6, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f6))
+            return true;
+          out.write("<br>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t");
+          int evalDoAfterBody = _jspx_th_c_005fforEach_005f6.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fforEach_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_005fforEach_005f6[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_005fforEach_005f6.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_005fforEach_005f6.doFinally();
+      _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.reuse(_jspx_th_c_005fforEach_005f6);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_form_005fcheckbox_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f6, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f6)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:checkbox
+    org.springframework.web.servlet.tags.form.CheckboxTag _jspx_th_form_005fcheckbox_005f2 = (org.springframework.web.servlet.tags.form.CheckboxTag) _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.CheckboxTag.class);
+    _jspx_th_form_005fcheckbox_005f2.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fcheckbox_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f6);
+    // /WEB-INF/views/appcomponent.jsp(102,24) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f2.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].appComponentList", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(102,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${appComponent.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fcheckbox_005f2 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fcheckbox_005f2 = _jspx_th_form_005fcheckbox_005f2.doStartTag();
+      if (_jspx_th_form_005fcheckbox_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fcheckbox_005f2[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fcheckbox_005f2.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fcheckbox_005f2.doFinally();
+      _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fcheckbox_005f2);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fout_005f7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f6, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f6)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f7 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_005fout_005f7.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fout_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f6);
+    // /WEB-INF/views/appcomponent.jsp(102,180) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fout_005f7.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${appComponent.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int _jspx_eval_c_005fout_005f7 = _jspx_th_c_005fout_005f7.doStartTag();
+    if (_jspx_th_c_005fout_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f7);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f7);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fforEach_005f7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f5, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f5)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f7 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_005fforEach_005f7.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fforEach_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f5);
+    // /WEB-INF/views/appcomponent.jsp(109,20) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f7.setVar("adapter");
+    // /WEB-INF/views/appcomponent.jsp(109,20) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f7.setVarStatus("statusAdapter");
+    // /WEB-INF/views/appcomponent.jsp(109,20) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f7.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${service.adapterList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_c_005fforEach_005f7 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_005fforEach_005f7 = _jspx_th_c_005fforEach_005f7.doStartTag();
+      if (_jspx_eval_c_005fforEach_005f7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t            \t\t");
+          if (_jspx_meth_form_005fcheckbox_005f3(_jspx_th_c_005fforEach_005f7, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f7))
+            return true;
+          out.write(' ');
+          if (_jspx_meth_c_005fout_005f8(_jspx_th_c_005fforEach_005f7, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f7))
+            return true;
+          out.write("<br>\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t\t        \t\t");
+          int evalDoAfterBody = _jspx_th_c_005fforEach_005f7.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fforEach_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_005fforEach_005f7[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_005fforEach_005f7.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_005fforEach_005f7.doFinally();
+      _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.reuse(_jspx_th_c_005fforEach_005f7);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_form_005fcheckbox_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f7, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f7)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:checkbox
+    org.springframework.web.servlet.tags.form.CheckboxTag _jspx_th_form_005fcheckbox_005f3 = (org.springframework.web.servlet.tags.form.CheckboxTag) _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.CheckboxTag.class);
+    _jspx_th_form_005fcheckbox_005f3.setPageContext(_jspx_page_context);
+    _jspx_th_form_005fcheckbox_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f7);
+    // /WEB-INF/views/appcomponent.jsp(110,24) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f3.setPath((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].adapterList", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/views/appcomponent.jsp(110,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fcheckbox_005f3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${adapter.uri}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_form_005fcheckbox_005f3 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_005fcheckbox_005f3 = _jspx_th_form_005fcheckbox_005f3.doStartTag();
+      if (_jspx_th_form_005fcheckbox_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_005fcheckbox_005f3[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_005fcheckbox_005f3.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_005fcheckbox_005f3.doFinally();
+      _005fjspx_005ftagPool_005fform_005fcheckbox_0026_005fvalue_005fpath_005fnobody.reuse(_jspx_th_form_005fcheckbox_005f3);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fout_005f8(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f7, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f7)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_005fout_005f8 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_005fout_005f8.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fout_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f7);
+    // /WEB-INF/views/appcomponent.jsp(110,170) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fout_005f8.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${adapter.name}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int _jspx_eval_c_005fout_005f8 = _jspx_th_c_005fout_005f8.doStartTag();
+    if (_jspx_th_c_005fout_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f8);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005fout_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005fout_005f8);
     return false;
   }
 }

@@ -246,7 +246,7 @@ public class ProjectDao {
 	}
 	
 	public long insertAdapter(Adapter adapter, long serviceId, Connection conn) throws SQLException{
-		String query = "INSERT INTO appcomponent "
+		String query = "INSERT INTO adapter "
 				+ " ( name, uri, serviceId, created, modified ) "
 				+ " VALUES (?, ?, ?, ?, ?)";
 		long key = 0;

@@ -51,6 +51,7 @@ public class ServiceController {
 		
 		List<Capability> mandatoryCaps = project.getProductList().get(0).getMandatoryCapabilityList();
 		List<Capability> optionalCaps = product.getOptionalCapabilityList();
+		populateCapabilityName(optionalCaps);
 		
 		System.out.println("List Optional: " + optionalCaps);
 		productInSession.setMandatoryCapabilityList(mandatoryCaps);
@@ -94,24 +95,23 @@ public class ServiceController {
 	}
 	
 	
-/*	private List<Service> getServicesForCapability(String capability){
-		List<Service> servicesList = new ArrayList<Service>();
-		int i = Math.abs((new Random()).nextInt()%3) + 1;
-		System.out.println("Generated i: " + i);
-		System.out.println("...... for : " + capability + " -->" + i + "services...");
-		for(int j=0; j<i; j++){
-			Service s = new Service("cap:"+capability+"#"+(new Random()).nextInt());
-			s.setName(s.getUri());
-			servicesList.add(s);
-		}
-		System.out.println("Service list created: " + servicesList);
-		return servicesList;
-	}*/
-	
 	
 	@RequestMapping(value="/service", method = RequestMethod.GET)
 	public String service_get(ModelMap model) {
 		return "service";
+	}
+	
+	private void populateCapabilityName(List<Capability> capabilityList){
+		if(capabilityList == null) return;
+		for(Capability cap: capabilityList){
+			String uri = cap.getUri();
+			String[] parts = uri.split("#");
+			if(parts.length>=2){
+				cap.setName(parts[1]);
+			}else{
+				cap.setName(uri); //Should not come here.. this is fall back.
+			}
+		}
 	}
 
 	/**

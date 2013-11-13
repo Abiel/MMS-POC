@@ -51,14 +51,14 @@
 		<div class="container">
 				<form:form class="form-signin" name='f' action="finish.htm" method='POST' commandName="product">
 					<h2 class="form-signin-heading" >Congratulations! your project is stored on our Repository</h2>
-					<div>Project Name: <c:out value="${projectName}" /> </div>			
+					<div><b>Project Name: <u><c:out value="${projectName}" /> </u></b></div>			
 					
 					<div style="width: 100%; height:102%; border:2px solid; border-radius:25px; padding: 10 10 30 10">
 						<div>Below you can find the app components and adapters associated to services<br> 
 						Please select the App Components and Adapters you want.</div>
 						<div style="width: 98%; float: left;"> 
 							
-							Out of box capabilities:
+							<b><u>Out of box capabilities:</u></b>
 							<div class="service-list" style="padding-left:3%;">
 								<c:forEach var="capability" varStatus="statusCapability" items="${product.mandatoryCapabilityList}">
 										
@@ -78,12 +78,19 @@
 												            		 <c:out value="${appComponent.uri}" /><br>
 												        		</c:forEach>
 										        			</div>
+										        			<b>Adapters</b>
+											        	<div class="checkbox-list">
+											        	
+											        	<c:forEach var="adapter" varStatus="statusAdapter" items="${service.adapterList}">
+										            		<c:out value="${adapter.uri}" /><br>
+										        		</c:forEach>
+										        		</div>
 										        		</div>
 									        	</c:forEach>
 											</div>
 						        </c:forEach>
 							</div>
-							Optional capabilities:
+							<b>Optional capabilities:</b>
 							<div class="service-list" style="padding-left:3%;">
 								<c:forEach var="capability" varStatus="statusCapability" items="${product.optionalCapabilityList}">
 										
@@ -99,6 +106,13 @@
 														        	<form:hidden path="optionalCapabilityList[${statusCapability.index}].serviceList[${statusService.index}].uri" value="${service.uri}" />
 														        	<c:forEach var="appComponent" varStatus="statusAppComponent" items="${service.appComponentList}">
 													            		 <c:out value="${appComponent.uri}" /><br>
+													        		</c:forEach>
+												        		</div>
+												        		<b>Adapters</b>
+													        	<div class="checkbox-list" style="padding-left: 3%;" >
+													        	
+														        	<c:forEach var="adapter" varStatus="statusAdapter" items="${service.adapterList}">
+													            		<c:out value="${adapter.uri}" /><br>
 													        		</c:forEach>
 												        		</div>
 												        	</div>

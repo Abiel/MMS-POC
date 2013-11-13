@@ -51,7 +51,7 @@
 <div class="container">
 		<form:form class="form-signin" name='f' action="capability.htm"  method='POST' commandName="project">
 			<h2 class="form-signin-heading" >Create New Project (Step-1)</h2>
-			<div>Insert Project Details.</div>
+			<div><b>Project Details.</b></div>
 			<div style="width: 100%; border:2px solid; border-radius:25px; padding: 10 10 10 10">
 				
 				<div style="width: 50%; float: left;"> 

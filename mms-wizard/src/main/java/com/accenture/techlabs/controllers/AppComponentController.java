@@ -20,11 +20,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.accenture.techlabs.dao.ProjectDao;
+import com.accenture.techlabs.domain.Adapter;
 import com.accenture.techlabs.domain.AppComponent;
 import com.accenture.techlabs.domain.Capability;
 import com.accenture.techlabs.domain.Product;
 import com.accenture.techlabs.domain.Project;
 import com.accenture.techlabs.domain.Service;
+import com.accenture.techlabs.httpclient.AdapterSparqlClient;
 import com.accenture.techlabs.httpclient.AppComponentSparqlClient;
 
 /**
@@ -64,8 +66,11 @@ public class AppComponentController {
 		printCapabilityList(product.getOptionalCapabilityList());
 		System.out.println("size optional cap: " + product.getOptionalCapabilityList().size());
 		
-		//STEP. For each of the services selected, populate them with components.
+		//STEP. For each of the services selected, populate it with AppComponents.
 		AppComponentSparqlClient.getAppComponentsForAllServices(product);
+		
+		//STEP. For each of the services selected, populate it with Adapters.
+		AdapterSparqlClient.getAdaptersForAllServices(product);
 		
 		//STEP. Is it necessary to set product to session in here? because it will change as app components are added to services down in the tree.
 		List<Product> newProductList = new ArrayList<Product>();
@@ -119,6 +124,7 @@ public class AppComponentController {
 				for(Service ser : services){
 					System.out.println("\t\tSer::" + ser.getUri());
 					printAppComponents(ser);
+					printAdapters(ser);
 				}	
 			}else{
 				System.out.println("\t\tSer is null.");
@@ -130,6 +136,15 @@ public class AppComponentController {
 		if(appComponentList!=null){
 			for(AppComponent appComp: appComponentList){
 				System.out.println("\t\t\tAppComp::" + appComp.getUri());
+			}
+		}
+	}
+	
+	private void printAdapters(Service service){
+		List<Adapter> adapterList = service.getAdapterList();
+		if(adapterList != null){
+			for(Adapter adapter: adapterList){
+				System.out.println("\t\t\tAdapter::" + adapter.getUri());
 			}
 		}
 	}

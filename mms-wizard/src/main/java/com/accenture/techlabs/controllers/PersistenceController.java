@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.accenture.techlabs.dao.ProjectDao;
+import com.accenture.techlabs.domain.Adapter;
 import com.accenture.techlabs.domain.AppComponent;
 import com.accenture.techlabs.domain.Capability;
 import com.accenture.techlabs.domain.Product;
@@ -48,16 +49,14 @@ public class PersistenceController {
             HttpServletResponse response, BindingResult result, ModelMap model) {
 		System.out.println("POST===============PERSIST CONTROLLER-===============");
 		
-		HttpSession session = request.getSession();
-		Project project = (Project) session.getAttribute("project");
-		System.out.println("Project:: "+ project.toString());
-		//System.out.println("size mandatory cap: " + product.getMandatoryCapabilityList().size());
+		//STEP 1. Remove mandatory capabilities that have no services.
 		List<Capability> mandatoryCapsList = product.getMandatoryCapabilityList();
 		System.out.println("Printing Mandatory List...");
 		List<Capability> cleanedMandatoryCapabilities = cleanUpCapabilityList(mandatoryCapsList);
 		product.setMandatoryCapabilityList(cleanedMandatoryCapabilities);
 		printCapabilityList(product.getMandatoryCapabilityList());
 		
+		//STEP 2. Remove optional capabilities that have no services.
 		List<Capability> optionalCapsList = product.getOptionalCapabilityList();
 		System.out.println("Printing optional List...");
 		List<Capability> cleanedOptionalCapabilities = cleanUpCapabilityList(optionalCapsList);
@@ -65,21 +64,25 @@ public class PersistenceController {
 		printCapabilityList(product.getOptionalCapabilityList());
 		//System.out.println("size optional cap: " + product.getOptionalCapabilityList().size());
 		
-		//STEP. For each of the services selected, populate them with components.
-		//AppComponentSparqlClient.getAppComponentsForAllServices(product);
-		
-		//STEP. Is it necessary to set product to session in here? because it will change as app components are added to services down in the tree.
+		//STEP 3. Inject the cleaned up product in to the project that was in session.
+		HttpSession session = request.getSession();
+		Project project = (Project) session.getAttribute("project");
+		System.out.println("Project:: "+ project.toString());
 		List<Product> newProductList = new ArrayList<Product>();
 		newProductList.add(product);
 		project.setProductList(newProductList);
-		model.addAttribute("projectName", project.getProjectName());
-		model.addAttribute("product", product);
+		project.getProductList().get(0).setUri((String) session.getAttribute("productName"));
 		
-		/*try {
-			projectDao.insertProjectAndAllRelatedData(project);
+		//STEP 4. Persist the data to a data repository.
+		try {
+		projectDao.insertProjectAndAllRelatedData(project);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}*/
+		}
+		
+		//STEP 5. Display the data for the user to see in persist.htm
+		model.addAttribute("projectName", project.getProjectName());
+		model.addAttribute("product", product);
 		return "persistence";
 	}
 	
@@ -121,6 +124,7 @@ public class PersistenceController {
 				for(Service ser : services){
 					System.out.println("\t\tSer::" + ser.getUri());
 					printAppComponents(ser);
+					printAdapters(ser);
 				}	
 			}else{
 				System.out.println("\t\tSer is null.");
@@ -136,13 +140,21 @@ public class PersistenceController {
 		}
 	}
 	
+	private void printAdapters(Service service){
+		List<Adapter> adapterList = service.getAdapterList();
+		if(adapterList != null){
+			for(Adapter adapter: adapterList){
+				System.out.println("\t\t\tAdapter::" + adapter.getUri());
+			}
+		}
+	}
+	
 	
 	public ProjectDao getProjectDao() {
 		return projectDao;
 	}
 
 	public void setProjectDao(ProjectDao projectDao) {
-		System.out.println("Setter injection for dao...");
 		this.projectDao = projectDao;
 	}
 
